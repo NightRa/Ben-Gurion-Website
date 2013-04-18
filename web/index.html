@@ -4,12 +4,17 @@
 		<title>בן גוריון</title>
 		<link rel="stylesheet" href="css/bootstrap.css"/>
 		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/buttons.css"/>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	</head>
 	<body dir="rtl">
 		<div class="container">
 			<div class="hero-unit center">
 				<h1>מורשת בן גוריון</h1>
+
 				<h2>ע"י אילן גודיק</h2>
+
 				<h2>פרשת ספינת אלטלנה</h2>
 
 				<p>אתר זה הוא בגדר עבודה לבגרות בנושא תכנות אינטרנט - JSP.</p>
@@ -60,11 +65,13 @@
 					<h3>תוצאות הפרשה</h3>
 
 					<br>
+
 					<p>בעקבות הפרשה נעצרו כ-200 מאנשי אצ"ל ושוחררו ברובם לאחר מספר שבועות, בעוד שחלק מבכירי הארגון: משה
 					   חסון, אליהו לנקין, יעקב מרידור, בצלאל עמיצור והלל קוק הוחזקו במעצר עד 27 באוגוסט. בסך הכל מתו 19
 					   אנשים מחילופי האש (16 מהאצ"ל ו-3 מצה"ל).</p>
 
 					<br>
+
 					<div class="center">
 						<a class="btn btn-success center" href="">להמשך קריאה</a>
 					</div>
@@ -73,34 +80,54 @@
 					<h3>הנצחה וזיכרון</h3>
 
 					<br>
+
 					<p>במשך שנים רבות נזכרת אלטלנה בשיח הציבורי לטוב ולרע בדיונים בין ימין ושמאל בפוליטיקה הישראלית.
 					   הקריאה "דרושה אלטלנה שנייה" נקראה על ידי עמי איילון לפני תוכנית ההתנתקות וכן בעקבות אירועי חוות
 					   גלעד.</p>
 					<br>
 					<br>
+
 					<div class="center">
 						<a class="btn btn-success center" href="">להמשך קריאה</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="nav">
+		<div class="menu">
 			<div class="right">
 				<a href="index.html" class="home"><img src="img/home.png" alt="home"/></a>
 				<a href="about.html">אודות</a>
 
-				<a class="space"></a>
+				<div class="mid-menu">
+					<a class="space"></a>
+					<a href="preface.html">הקדמה</a>
+					<a href="background.html">רקע</a>
+					<a href="process.html">מהלך הפרשה</a>
+					<a href="results.html">תוצאות הפרשה</a>
+					<a href="memory.html">הנצחה וזיכרון</a>
+				</div>
 
-				<a href="preface.html">הקדמה</a>
-				<a href="background.html">רקע</a>
-				<a href="process.html">מהלך הפרשה</a>
-				<a href="results.html">תוצאות הפרשה</a>
-				<a href="memory.html">הנצחה וזיכרון</a>
 			</div>
 			<div class="left">
 				<a href="">הרשמה</a>
 				<a href="">התחברות</a>
 			</div>
+
+			<form action="login.jsp" method="post" class="login">
+				<table>
+					<tr>
+						<td><label for="inputUsername">שם משתמש</label></td>
+						<td><input maxlength="16" type="text" id="inputUsername" placeholder="שם משתמש"></td>
+					</tr>
+					<tr>
+						<td><label for="inputPassword">סיסמא</label></td>
+						<td><input maxlength="16" type="password" id="inputPassword" placeholder="סיסמא"></td>
+					</tr>
+				</table>
+				<button type="submit" class="btn btn-orange">כניסה</button>
+			</form>
+
+
 		</div>
 
 	</body>
