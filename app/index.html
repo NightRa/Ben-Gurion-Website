@@ -110,7 +110,8 @@
 			</div>
 			<div class="left">
 				<a href="">הרשמה</a>
-				<a onclick="toggle_visibility('login');" href="#">התחברות</a>
+				<!--data-target to fix a jump bug-->
+				<a onclick="toggle_visibility('login');" data-target="#">התחברות</a>
 				<form action="login.jsp" method="post" class="login" id="login">
 					<table>
 						<tr>
