@@ -5,7 +5,7 @@
 		<link rel="stylesheet" href="css/bootstrap.css"/>
 		<link rel="stylesheet" href="css/style.css"/>
 		<link rel="stylesheet" href="css/buttons.css"/>
-		
+
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	</head>
 	<body dir="rtl">
@@ -110,25 +110,23 @@
 			</div>
 			<div class="left">
 				<a href="">הרשמה</a>
-				<a href="">התחברות</a>
+				<a onclick="toggle_visibility('login');" href="#">התחברות</a>
+				<form action="login.jsp" method="post" class="login" id="login">
+					<table>
+						<tr>
+							<td><label for="inputUsername">שם משתמש</label></td>
+							<td><input maxlength="16" type="text" id="inputUsername" placeholder="שם משתמש"></td>
+						</tr>
+						<tr>
+							<td><label for="inputPassword">סיסמא</label></td>
+							<td><input maxlength="16" type="password" id="inputPassword" placeholder="סיסמא"></td>
+						</tr>
+					</table>
+					<button type="submit" class="btn btn-orange">כניסה</button>
+				</form>
 			</div>
-
-			<form action="login.jsp" method="post" class="login">
-				<table>
-					<tr>
-						<td><label for="inputUsername">שם משתמש</label></td>
-						<td><input maxlength="16" type="text" id="inputUsername" placeholder="שם משתמש"></td>
-					</tr>
-					<tr>
-						<td><label for="inputPassword">סיסמא</label></td>
-						<td><input maxlength="16" type="password" id="inputPassword" placeholder="סיסמא"></td>
-					</tr>
-				</table>
-				<button type="submit" class="btn btn-orange">כניסה</button>
-			</form>
-
-
 		</div>
 
+		<script type="text/javascript" src="js/script.js"></script>
 	</body>
 </html>

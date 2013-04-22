@@ -1,3 +1,5 @@
+@mini: ~"@media (max-width: 850px)";
+
 .rounded(@radius: 6px) {
   -webkit-border-radius: @radius;
   -moz-border-radius: @radius;
@@ -13,6 +15,26 @@
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
 }
 
+.shadow{
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.opacity(@percentage){
+  zoom: 1;
+  filter: alpha(opacity=@percentage);
+  opacity: @percentage/100;
+}
+
+.transition(@trans){
+  -webkit-transition: @trans;
+  -moz-transition: @trans;
+  -ms-transition: @trans;
+  -o-transition: @trans;
+  transition: @trans;
+}
+
 body {
   background: url("../img/water.png") repeat;
   padding: 0;
@@ -22,6 +44,14 @@ body {
   width: 75%;
   margin: 40px auto auto;
   padding: 20px;
+  .transition(width 1s);
+  @media (max-width: 850px){
+    width: 90%;
+  }
+}
+
+.row-fluid>div,.hero-unit{
+  .shadow;
 }
 
 .menu {
@@ -38,9 +68,9 @@ body {
   }
   .space{
     width: 35px;
-  }
-  .space:hover{
-    background-color: rgba(0,0,0,0.1);
+    &:hover{
+      background-color: rgba(0,0,0,0.1);
+    }
   }
   .left a {
     float: left;
@@ -59,9 +89,10 @@ body {
     color: white;
     font-weight: 200;
     font-size: 18px;
-  }
-  a:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    outline: none;
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.5);
+    }
   }
 }
 
@@ -80,18 +111,22 @@ body {
 }
 
 .login {
-//  display: none;
+  display: none;
   top: 50px;
   left: 50px;
-//  width: 300px;
   position: absolute;
-//  height: 200px;
   .rounded;
   .gradient;
+  .shadow;
   border: darken(#0055cc,10%) 1px solid;
   color: white;
   padding: 15px;
   text-align: center;
+  .opacity(80);
+  .transition(opacity 1s);
+  &:hover{
+    .opacity(100);
+  }
   label{
     float: right;
     margin-left: 10px;
@@ -105,10 +140,6 @@ body {
 @media (max-width: 850px) {
   .mid-menu {
     display: none !important;
-  }
-
-  .container {
-    width: 90% !important;
   }
 }
 

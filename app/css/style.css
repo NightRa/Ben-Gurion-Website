@@ -1,3 +1,8 @@
+.shadow {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
 body {
   background: url("../img/water.png") repeat;
   padding: 0;
@@ -6,6 +11,22 @@ body {
   width: 75%;
   margin: 40px auto auto;
   padding: 20px;
+  -webkit-transition: width 1s;
+  -moz-transition: width 1s;
+  -ms-transition: width 1s;
+  -o-transition: width 1s;
+  transition: width 1s;
+}
+@media (max-width: 850px) {
+  .container {
+    width: 90%;
+  }
+}
+.row-fluid > div,
+.hero-unit {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 .menu {
   top: 0;
@@ -48,6 +69,7 @@ body {
   color: white;
   font-weight: 200;
   font-size: 18px;
+  outline: none;
 }
 .menu a:hover {
   background-color: rgba(0, 0, 0, 0.5);
@@ -67,6 +89,7 @@ body {
   text-align: center;
 }
 .login {
+  display: none;
   top: 50px;
   left: 50px;
   position: absolute;
@@ -79,10 +102,26 @@ body {
   background: -moz-linear-gradient(center bottom, #0088cc 0%, #0055cc 100%);
   background: -o-linear-gradient(#0055cc, #0088cc);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0055cc', GradientType=0);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   border: #004099 1px solid;
   color: white;
   padding: 15px;
   text-align: center;
+  zoom: 1;
+  filter: alpha(opacity=80);
+  opacity: 0.8;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+.login:hover {
+  zoom: 1;
+  filter: alpha(opacity=80);
+  opacity: 1;
 }
 .login label {
   float: right;
@@ -95,8 +134,5 @@ body {
 @media (max-width: 850px) {
   .mid-menu {
     display: none !important;
-  }
-  .container {
-    width: 90% !important;
   }
 }
