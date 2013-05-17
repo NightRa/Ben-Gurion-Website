@@ -6,6 +6,7 @@
         <entry key="Main Style">
           <value>
             <LessProfile>
+              <option name="compressOutput" value="true" />
               <option name="cssDirectories">
                 <list>
                   <CssDirectory>
@@ -13,7 +14,7 @@
                   </CssDirectory>
                 </list>
               </option>
-              <option name="includePattern" value="*" />
+              <option name="includePattern" value="style*" />
               <option name="lessDirPath" value="C:\Users\ilan3_000\Programming\Website\app\less" />
               <option name="name" value="Main Style" />
             </LessProfile>
