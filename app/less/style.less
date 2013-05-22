@@ -1,7 +1,5 @@
-@import "util";
-@import "menu";
-@import "login";
-@import "input";
+@import "util/util";
+@import "components/menu";
 
 body {
   padding: 0;
@@ -23,66 +21,8 @@ body {
   }
 }
 
-.row-fluid>div,.hero-unit{
-  .shadow;
-}
-
-.row-fluid>div {
-  margin: 20px 0;
-  padding: 10px;
-  background: #eeeeee;
-  .rounded;
-  h3 {
-    .center
-  }
-}
-
-.center {
-  text-align: center;
-}
-
-@media (max-width: 850px) {
-  .mid-menu {
-    display: none !important;
-  }
-
-  [class*="span"],
-  .uneditable-input[class*="span"],
-  .row-fluid [class*="span"] {
-    float: none;
-    display: block;
-    width: 100%;
-    margin-right: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-}
-
-.row-fluid [class*="span"]:last-child {
-  margin-left: 0;
-}
-
-.row-fluid [class*="span"] {
-  display: block;
-  min-height: 100%;
-  min-height: 30px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  float: right;
-  margin-left: 2.127659574468085%;
-  *margin-left: 2.074468085106383%;
-  //  display:table-cell;
-  //  vertical-align:middle;
-
-}
-
-.row-fluid {
-  //  display:table;
-  width: 100%;
-  *zoom: 1;
-
+img{
+  border: 0;
 }
 
 .span6{
@@ -106,7 +46,6 @@ h6 {
   font-weight: bold;
   line-height: 20px;
   color: inherit;
-  text-rendering: optimizelegibility;
 }
 h3 {
   font-size: 24.5px;
@@ -121,37 +60,4 @@ h3 {
 }
 p {
   margin: 0 0 10px;
-}
-
-
-.row-fluid:before,
-.row-fluid:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-
-.row-fluid:after {
-  clear: both;
-}
-
-.hero-unit {
-  padding: 60px;
-  margin-bottom: 30px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eeeeee;
-  .rounded(6px);
-  h1{
-    margin-bottom: 0;
-    font-size: 60px;
-    line-height: 1;
-    color: inherit;
-    letter-spacing: -1px;
-  }
-}
-
-label{
-  margin-bottom: 5px;
 }

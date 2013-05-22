@@ -1,17 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
     <head>
 
         <title>בן גוריון</title>
-        <!--<link rel="stylesheet" href="css/bootstrap.css"/>-->
-        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/index.css"/>
         <link rel="stylesheet" href="css/buttons.css"/>
-
-
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body dir="rtl">
+        <%@include file="menu.jsp"%>
         <div class="container">
             <div class="hero-unit center">
                 <h1>מורשת בן גוריון</h1>
@@ -96,49 +94,7 @@
                 </div>
             </div>
         </div>
-        <div class="menu">
-            <div class="right">
-                <a href="index.html" class="home"><img src="img/home.png" alt="home"/></a>
-                <a href="about.html">אודות</a>
 
-                <div class="mid-menu">
-                    <a class="space"></a>
-                    <a href="preface.html">הקדמה</a>
-                    <a href="background.html">רקע</a>
-                    <a href="process.html">מהלך הפרשה</a>
-                    <a href="results.html">תוצאות הפרשה</a>
-                    <a href="memory.html">הנצחה וזיכרון</a>
-                </div>
 
-            </div>
-            <div class="left">
-                <a href="">הרשמה</a>
-                <!--data-target to fix a jump bug-->
-                <a onclick="toggle_visibility('login');" data-target="#">התחברות</a>
-                <form action="login.jsp" method="post" class="login" id="login">
-                    <table>
-                        <tr>
-                            <td><label for="inputUsername">שם משתמש</label></td>
-                            <td><input maxlength="16" type="text" id="inputUsername" placeholder="שם משתמש"></td>
-                        </tr>
-                        <tr>
-                            <td><label for="inputPassword">סיסמא</label></td>
-                            <td><input maxlength="16" type="password" id="inputPassword" placeholder="סיסמא"></td>
-                        </tr>
-                    </table>
-                    <button type="submit" class="btn btn-orange">כניסה</button>
-                </form>
-            </div>
-        </div>
-
-        <script type="text/javascript">
-            function toggle_visibility(id) {
-                var e = document.getElementById(id);
-                if (e.style.display == 'block')
-                    e.style.display = 'none';
-                else
-                    e.style.display = 'block';
-            }
-        </script>
     </body>
 </html>
