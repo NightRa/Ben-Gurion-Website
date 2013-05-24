@@ -32,7 +32,7 @@
                        כאזור בשליטת האו"ם, המשיכו כוחות אצ"ל שבה להילחם בנפרד מצה"ל.</p>
 
                     <div class="center">
-                        <a class="btn btn-success center" href="">להמשך קריאה</a>
+                        <a class="btn btn-success center" href="info/preface.jsp">להמשך קריאה</a>
                     </div>
                 </div>
                 <div class="span6">
