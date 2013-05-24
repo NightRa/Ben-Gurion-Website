@@ -12,10 +12,10 @@
         <div class="mid-menu">
             <a class="space"></a>
             <a href="/info/preface.jsp">הקדמה</a>
-            <a href="background.jsp">רקע</a>
-            <a href="process.jsp">מהלך הפרשה</a>
-            <a href="results.jsp">תוצאות הפרשה</a>
-            <a href="memory.jsp">הנצחה וזיכרון</a>
+            <a href="/info/background.jsp">רקע</a>
+            <a href="/info/process.jsp">מהלך הפרשה</a>
+            <a href="/info/results.jsp">תוצאות הפרשה</a>
+            <a href="/info/memory.jsp">הנצחה וזיכרון</a>
         </div>
 
     </div>

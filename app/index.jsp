@@ -45,7 +45,7 @@
                        האו"ם.</p>
 
                     <div class="center">
-                        <a class="btn btn-success center" href="">להמשך קריאה</a>
+                        <a class="btn btn-success center" href="info/background.jsp">להמשך קריאה</a>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                        הוחלט לעשותה אוניית נשק. </p>
 
                     <div class="center">
-                        <a class="btn btn-success center" href="">להמשך קריאה</a>
+                        <a class="btn btn-success center" href="info/process.jsp">להמשך קריאה</a>
                     </div>
                 </div>
                 <div class="span4">
@@ -74,7 +74,7 @@
                     <br>
 
                     <div class="center">
-                        <a class="btn btn-success center" href="">להמשך קריאה</a>
+                        <a class="btn btn-success center" href="info/">להמשך קריאה</a>
                     </div>
                 </div>
                 <div class="span4">
@@ -89,7 +89,7 @@
                     <br>
 
                     <div class="center">
-                        <a class="btn btn-success center" href="">להמשך קריאה</a>
+                        <a class="btn btn-success center" href="info/">להמשך קריאה</a>
                     </div>
                 </div>
             </div>
