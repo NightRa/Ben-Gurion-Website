@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet {
         Object user = session.getAttribute("user");
         if(user==null){
             Login login = new Login(new RealDB(), username, password);
-            session.setAttribute("user", login.getUser());
+            if(login.isValid()) session.setAttribute("user", login.getUser());
         }
         resp.sendRedirect("");
 //        getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);

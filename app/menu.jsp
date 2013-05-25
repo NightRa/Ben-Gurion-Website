@@ -6,10 +6,10 @@
 %>
 <div class="menu">
     <div class="right">
-        <a href="/index.jsp" class="home"><img src="/img/home.png" alt="home"/></a>
-        <a href="about.jsp">אודות</a>
-
+        <a href="/" class="home"><img src="/img/home.png" alt="home"/></a>
+        <a href="#" class="menu-expand"><img src="/img/arrow.png" alt="Expand"/></a>
         <div class="mid-menu">
+            <a href="about.jsp">אודות</a>
             <a class="space"></a>
             <a href="/info/preface.jsp">הקדמה</a>
             <a href="/info/background.jsp">רקע</a>
@@ -21,10 +21,10 @@
     </div>
     <div class="left">
         <%if(loggedIn){%>
-        <a href="logout">התנתק</a>
-        <a href="profile">פרופיל</a>
+        <a href="/logout">התנתק</a>
+        <a href="/profile">פרופיל</a>
         <%if(user.isAdmin){%>
-            <a href="admin">לוח בקרה</a>
+            <a href="/admin">לוח בקרה</a>
         <%}%>
         <span>
         שלום <%=user.firstName%>

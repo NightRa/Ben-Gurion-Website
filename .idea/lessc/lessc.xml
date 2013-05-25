@@ -14,7 +14,8 @@
                   </CssDirectory>
                 </list>
               </option>
-              <option name="includePattern" value="*" />
+              <option name="excludePattern" value="style" />
+              <option name="includePattern" value="*.less" />
               <option name="lessDirPath" value="C:\Users\ilan3_000\Programming\Website\app\less" />
               <option name="name" value="Main Style" />
             </LessProfile>

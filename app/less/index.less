@@ -3,8 +3,9 @@
 .hero-unit {
   .box;
   padding: 60px;
+  margin-top: 75px;
   margin-bottom: 30px;
-  font-size: 18px;
+  font-size: 14pt;
   font-weight: 200;
   line-height: 30px;
   h1{
@@ -13,6 +14,16 @@
     line-height: 1;
     color: inherit;
     letter-spacing: -1px;
+  }
+  @media (max-width:@small) {
+    padding: 10px;
+    font-size: 12pt;
+    h1{
+      font-size: 30pt;
+    }
+    h2{
+      font-size: 20pt;
+    }
   }
 }
 
@@ -23,5 +34,17 @@
   .rounded;
   h3 {
     .center
+  }
+}
+
+@media (max-width:@medium){
+  .row-fluid>div>br{
+    display: none;
+  }
+}
+
+@media (max-width:@small) {
+  .extra{
+    display: none;
   }
 }

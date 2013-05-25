@@ -1,11 +1,5 @@
 @import "login";
 
-@media (max-width: 850px) {
-  .mid-menu {
-      display: none !important;
-  }
-}
-
 .menu {
   top: 0;
   width: 100%;
@@ -55,5 +49,11 @@
       //For data-target fix
       cursor: pointer;
     }
+  }
+}
+
+@media (max-width: @medium) {
+  .mid-menu {
+    display: none !important;
   }
 }

@@ -2,14 +2,13 @@
 
 p {
   .box;
-  margin: auto;
-  margin-top: 20px;
+  margin: 20px auto;
   width: 90%;
   font-size: 13pt;
   font-weight: 200;
   line-height: 30px;
   padding: 10px;
-  @media (min-width:850px) {
+  @media (min-width:@medium) {
     width: 95%;
   }
 }
@@ -18,7 +17,7 @@ p {
   .box;
   width: 90%;
   max-width: 500px;
-  margin: auto;
+  margin: 20px auto;
   padding: 10px;
   img {
     width: 100%;
@@ -27,6 +26,9 @@ p {
 }
 
 h3 {
+  &:first-of-type{
+    margin-top:75px;
+  }
   .center;
   .box;
   padding: 20px;

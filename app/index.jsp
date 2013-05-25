@@ -20,7 +20,7 @@
 
                 <p>אתר זה הוא בגדר עבודה לבגרות בנושא תכנות אינטרנט - JSP.</p>
 
-                <a href="#" class="btn btn-primary btn-large" style="margin-top: 25px;">להמשך קריאה אודות האתר</a>
+                <a href="#" class="btn btn-primary btn-large" style="margin-top: 25px;"><span class="extra">להמשך קריאה </span>אודות האתר</a>
             </div>
             <div class="row-fluid">
                 <div class="span6">
