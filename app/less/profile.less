@@ -1,0 +1,46 @@
+@import "style";
+
+.base(){
+  .box;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+h1,.profile,.profile-menu{
+  .base;
+}
+
+h1{
+  .center;
+}
+
+.profile{
+  float: left;
+  width: 60%;
+}
+
+.profile-menu{
+  float: right;
+  width: 25%;
+  .center;
+  a{
+    text-decoration: none;
+    color: @text-color;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 20px;
+    padding: 10px;
+    display: block;
+    border-bottom: rgba(51,51,51,0.4) 1px solid;
+    &:hover,&.active{
+      .rounded(4px);
+      .gradient(lighten(#0081c2,3%),lighten(#0088cc,3%),lighten(#0077b3,3%));
+      color: white;
+    }
+    &:active{
+      .rounded(4px);
+      .gradient(darken(#0081c2,1%),darken(#0088cc,1%),darken(#0077b3,1%));
+      color: white;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 @import "util/util";
 @import "components/menu";
-@import "components/layout";
+
+@text-color:#333333;
 
 body {
   padding: 0;
@@ -9,12 +10,18 @@ body {
   background: url("../img/water.png") repeat;
   font-size: 14px;
   line-height: 20px;
-  color: #333333;
+  color: @text-color;
+}
+
+.box{
+  .shadow;
+  background-color: #eeeeee;
+  .rounded(6px);
 }
 
 .container {
   width: 75%;
-  margin: 60px auto auto;
+  margin: 75px auto auto;
   .transition(width 1s);
 
   @media (max-width: @medium){
@@ -24,16 +31,6 @@ body {
 
 img{
   border: 0;
-}
-
-.span6{
-  width: 48.93617021276595%;
-  *width: 48.88297872340425%;
-}
-
-.span4{
-  width: 31.914893617021278%;
-  *width: 31.861702127659576%;
 }
 
 h1,
