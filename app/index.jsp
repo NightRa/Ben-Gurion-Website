@@ -74,7 +74,7 @@
                     <br>
 
                     <div class="center">
-                        <a class="btn btn-success center" href="info/">להמשך קריאה</a>
+                        <a class="btn btn-success center" href="info/results.jsp">להמשך קריאה</a>
                     </div>
                 </div>
                 <div class="span4">
@@ -89,7 +89,7 @@
                     <br>
 
                     <div class="center">
-                        <a class="btn btn-success center" href="info/">להמשך קריאה</a>
+                        <a class="btn btn-success center" href="info/memory.jsp">להמשך קריאה</a>
                     </div>
                 </div>
             </div>

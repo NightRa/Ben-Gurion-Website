@@ -18,13 +18,20 @@
     &:hover {
       background-color: rgba(0, 0, 0, 0.1);
     }
+    @media (max-width:@large) {
+      display: none;
+    }
   }
+
   span{
     float: left;
     color: white;
     font-weight: 200;
     font-size: 18px;
     padding: 10px;
+    @media (max-width:@small){
+      display: none;
+    }
   }
   .left a {
     float: left;
@@ -52,7 +59,7 @@
   }
 }
 
-@media (max-width: @medium) {
+@media (max-width: @large) {
   .mid-menu {
     display: none !important;
   }
