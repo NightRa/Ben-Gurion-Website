@@ -1,13 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="model.User" %>
 <%
-    User user = (User) session.getAttribute("user");
-    boolean loggedIn = user != null;
+    User menuUser = (User) session.getAttribute("user");
+    boolean loggedIn = menuUser != null;
 %>
 <div class="menu">
     <div class="right">
         <a href="/" class="home"><img src="/img/home.png" alt="home"/></a>
-        <a href="#" class="menu-expand"><img src="/img/arrow.png" alt="Expand"/></a>
+        <%--<a href="#" class="menu-expand"><img src="/img/arrow.png" alt="Expand"/></a>--%>
 
         <div class="mid-menu">
             <a href="about.jsp">אודות</a>
@@ -23,12 +23,12 @@
     <div class="left">
         <%if (loggedIn) {%>
         <a href="/logout">התנתק</a>
-        <a href="/profile.jsp">פרופיל</a>
-        <%if (user.isAdmin) {%>
+        <a href="/profile/profile.jsp">פרופיל</a>
+        <%if (menuUser.isAdmin) {%>
         <a href="/admin">לוח בקרה</a>
         <%}%>
         <span>
-        שלום <%=user.firstName%>
+        שלום <%=menuUser.firstName%>
         </span>
 
 

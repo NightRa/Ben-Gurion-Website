@@ -1,46 +1,85 @@
 @import "style";
 
-.base(){
+@point1: 700px;
+
+.base() {
   .box;
+  background-color: white;
   padding: 20px;
   margin-top: 20px;
+    @media (max-width:@small) {
+      padding-right: 10px;
+    }
 }
 
-h1,.profile,.profile-menu{
+h1, .profile, .profile-menu {
   .base;
 }
 
-h1{
+h1 {
   .center;
 }
 
-.profile{
-  float: left;
-  width: 60%;
-}
-
-.profile-menu{
-  float: right;
-  width: 25%;
-  .center;
-  a{
+.profile-menu {
+  @media (min-width:@point1) {
+    float: right;
+    width: 25%;
+    .center;
+  }
+  @media (max-width:@point1) {
+    display: block;
+    .center;
+  }
+  a {
     text-decoration: none;
     color: @text-color;
     font-weight: bold;
-    font-size: 16px;
-    margin: 20px;
+    font-size: 14px;
+    margin: 7px;
     padding: 10px;
-    display: block;
-    border-bottom: rgba(51,51,51,0.4) 1px solid;
-    &:hover,&.active{
+    @media (min-width:@point1) {
+      font-size: 16px;
+      margin: 20px;
+      padding: 10px;
+      display: block;
+    }
+    @media (max-width:440px) {
+      display: block;
+      text-align: center;
+    }
+    border-bottom: rgba(51, 51, 51, 0.4) 1px solid;
+    &:hover, &.active {
       .rounded(4px);
-      .gradient(lighten(#0081c2,3%),lighten(#0088cc,3%),lighten(#0077b3,3%));
+      .gradient(lighten(#0081c2,5%),lighten(#0088cc,5%),lighten(#0077b3,5%));
       color: white;
     }
-    &:active{
+    &:active {
       .rounded(4px);
-      .gradient(darken(#0081c2,1%),darken(#0088cc,1%),darken(#0077b3,1%));
+      .gradient(#0081c2,#0088cc,lighten(#0077b3,5%));
       color: white;
     }
+  }
+}
+
+.profile {
+  @media (min-width:@point1) {
+    float: left;
+    width: 60%;
+  }
+}
+
+label {
+  width: 30%;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.field {
+  width: 100%;
+}
+
+@media (max-width:440px) {
+  input {
+    width: 120px;
   }
 }
