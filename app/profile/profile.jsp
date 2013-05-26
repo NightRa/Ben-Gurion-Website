@@ -24,7 +24,7 @@
                 <a href="#">ציוני שאלון</a>
             </div>
 
-            <form class="profile">
+            <form class="profile" action="/profile" method="post">
                 <div class="field">
                     <label for="username">שם משתמש:</label>
                     <input type="text" name="username" id="username" value="<%=user.username%>" />
