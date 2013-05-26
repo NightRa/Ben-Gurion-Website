@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     User user = (User) session.getAttribute("user");
-    if(user==null) response.sendRedirect("");
+    if(user==null) response.sendRedirect("/");
     else{
 %>
 <!DOCTYPE html>
