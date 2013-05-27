@@ -27,25 +27,25 @@
             </div>
 
             <form class="profile" action="/profile" method="post">
-                <%if(request.getAttribute("success")!=null){%>
+                <%if (request.getAttribute("success") != null) {%>
                 <div class="status">
                     נתונים עודכנו בהצלחה!
                 </div>
                 <%}%>
                 <div class="field">
                     <label for="username">שם משתמש:</label>
-                    <input type="text"  name="username" id="username" value="<%=user.username%>"
-                           class="<%=request.getAttribute("fail-username")!=null?"fail":""%>"/>
-                    <%if(request.getAttribute("fail-username-taken")!= null){%>
-                        <span>כבר בשימוש</span>
+                    <input type="text" name="username" id="username" value="<%=user.username%>"
+                           class="<%=request.getAttribute("fail-username")!=null||request.getAttribute("fail-username-taken")!=null?"fail":""%>"/>
+                    <%if (request.getAttribute("fail-username-taken") != null) {%>
+                    <span>תפוס</span>
                     <%}%>
                 </div>
                 <div class="field">
                     <label for="email">אימייל:</label>
                     <input type="text" name="email" id="email" value="<%=user.email%>"
-                           class="<%=request.getAttribute("fail-email")!=null?"fail":""%>"/>
-                    <%if(request.getAttribute("fail-email-taken")!= null){%>
-                        <span>כבר בשימוש</span>
+                           class="<%=request.getAttribute("fail-email")!=null||request.getAttribute("fail-email-taken")!=null?"fail":""%>"/>
+                    <%if (request.getAttribute("fail-email-taken") != null) {%>
+                    <span>תפוס</span>
                     <%}%>
                 </div>
                 <div class="field">

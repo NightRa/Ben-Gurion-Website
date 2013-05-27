@@ -28,7 +28,7 @@ public class ProfileServlet extends HttpServlet {
                 fail(req, "username");
                 failed = true;
             }
-            if(entries(db, "username", username) > 1){
+            if(entries(db, "username", username) != 0 && !username.equals(user.username)){
                 fail(req,"username-taken");
                 failed = true;
             }
@@ -37,8 +37,8 @@ public class ProfileServlet extends HttpServlet {
                 fail(req, "email");
                 failed = true;
             }
-            if(entries(db, "email", email) > 1){
-                fail(req,"email-taken");
+            if(entries(db, "email", email) != 0 && !email.equals(user.email)){
+                fail(req, "email-taken");
                 failed = true;
             }
             String firstName = req.getParameter("firstName");
@@ -73,6 +73,6 @@ public class ProfileServlet extends HttpServlet {
     }
 
     private int entries(DB db, String field, String value) {
-        return db.select("SELECT '" + field + "' FROM users WHERE '" + field + "'='" + value + "';").length;
+        return db.select("SELECT " + field + " FROM users WHERE " + field + "='" + value + "';").length;
     }
 }
