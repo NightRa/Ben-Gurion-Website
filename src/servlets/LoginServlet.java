@@ -1,7 +1,7 @@
 //Created By Ilan Godik
 package servlets;
 
-import jdbc.RealDB;
+import db.RealDB;
 import logic.Login;
 
 import javax.servlet.ServletException;

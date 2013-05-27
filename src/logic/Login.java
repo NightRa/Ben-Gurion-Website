@@ -1,7 +1,7 @@
 //Created By Ilan Godik
 package logic;
 
-import jdbc.DB;
+import db.DB;
 import model.User;
 import util.CryptoUtil;
 

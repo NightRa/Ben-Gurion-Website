@@ -70,7 +70,7 @@ h1 {
 }
 
 label {
-  width: 30%;
+  width: 20%;
   display: inline-block;
   margin-right: 30px;
 }
@@ -79,8 +79,27 @@ label {
   width: 100%;
 }
 
+.status{
+  width: 100%;
+  border: #1f991f solid 1px;
+  .rounded(6px);
+  .center;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
 @media (max-width:440px) {
   input {
     width: 120px;
   }
+}
+
+.fail{
+  border-color: #DA4F49;
+}
+
+span{
+  color: #DA4F49;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }

@@ -1,5 +1,5 @@
 //Created By Ilan Godik
-package jdbc;
+package db;
 
 public interface DB {
     public void update(String sql);

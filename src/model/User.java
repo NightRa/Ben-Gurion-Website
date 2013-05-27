@@ -1,6 +1,9 @@
 //Created By Ilan Godik
 package model;
 
+import db.DB;
+import logic.Login;
+
 public class User {
     public final int id;
     public final String username;
@@ -20,6 +23,17 @@ public class User {
         this.lastName = lastName;
         this.birthYear = birthYear;
         this.isAdmin = isAdmin;
+    }
+
+    public void save(DB db) {
+        db.update("UPDATE users SET username='" + username + "',password='" + passHash + "',email='" + email + "',privateName='" + firstName + "', lastName='" + lastName + "',birthYear='" + birthYear + "',admin='" + (isAdmin ? "1" : "0") + "' WHERE id='" + id + "';");
+    }
+
+    public User create(DB db) {
+        db.update("INSERT INTO users (username,password,email,privateName,lastName,birthYear) VALUES ('" + username + "','" + passHash + "','" + email + "','" + firstName + "','" + lastName + "','" + birthYear + "');");
+        Login login = new Login(db,username,passHash);
+        if(!login.isValid()) throw new IllegalStateException("Can't login after user creation.");
+        return login.getUser();
     }
 
     public int getId() {
