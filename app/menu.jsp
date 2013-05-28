@@ -23,7 +23,7 @@
     <div class="left">
         <%if (loggedIn) {%>
         <a href="/logout">התנתק</a>
-        <a href="/profile/profile.jsp">פרופיל</a>
+        <a href="/user/profile.jsp">פרופיל</a>
         <%if (menuUser.isAdmin) {%>
         <a href="/admin">לוח בקרה</a>
         <%}%>

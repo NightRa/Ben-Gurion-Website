@@ -21,9 +21,9 @@
             <h1>פרופיל</h1>
 
             <div class="profile-menu">
-                <a class="active" href="/profile/profile.jsp">פרטים אישיים</a>
-                <a href="/profile/password.jsp">שינוי סיסמא</a>
-                <a href="/profile/grades.jsp">ציוני שאלון</a>
+                <a class="active" href="/user/profile.jsp">פרטים אישיים</a>
+                <a href="/user/password.jsp">שינוי סיסמא</a>
+                <a href="/user/grades.jsp">ציוני שאלון</a>
             </div>
 
             <form class="profile" action="/profile" method="post">

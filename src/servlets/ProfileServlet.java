@@ -65,7 +65,7 @@ public class ProfileServlet extends HttpServlet {
             }
         }
 
-        req.getRequestDispatcher("/profile/profile.jsp").forward(req,resp);
+        req.getRequestDispatcher("/user/profile.jsp").forward(req,resp);
     }
 
     private void fail(HttpServletRequest req, String field) {
