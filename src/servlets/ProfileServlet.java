@@ -5,6 +5,7 @@ import db.DB;
 import db.RealDB;
 import model.User;
 import util.Validation.IntValidator;
+import static util.ServletUtil.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,54 +23,57 @@ public class ProfileServlet extends HttpServlet {
         User user = (User) session.getAttribute("user");
         if (user != null) {
             RealDB db = new RealDB();
-            boolean failed = false;
-            String username = req.getParameter("username");
-            if (username.contains(" ")) {
-                fail(req, "username");
-                failed = true;
-            }
-            if(entries(db, "username", username) != 0 && !username.equals(user.username)){
-                fail(req,"username-taken");
-                failed = true;
-            }
-            String email = req.getParameter("email");
-            if (email.contains(" ")) {
-                fail(req, "email");
-                failed = true;
-            }
-            if(entries(db, "email", email) != 0 && !email.equals(user.email)){
-                fail(req, "email-taken");
-                failed = true;
-            }
-            String firstName = req.getParameter("firstName");
-            if (firstName.contains(" ")) {
-                fail(req, "firstName");
-                failed = true;
-            }
-            String lastName = req.getParameter("lastName");
-            if (lastName.contains(" ")) {
-                fail(req, "lastName");
-                failed = true;
-            }
+
+            String username = spaceCheck(req,"username");
+            checkTaken(db,req,"username",user.username);
+
+            String email = spaceCheck(req, "email");
+            checkTaken(db,req,"email",user.email);
+
+            String firstName = spaceCheck(req,"firstName");
+            String lastName = spaceCheck(req,"lastName");
+
             String birthYear = req.getParameter("birthYear");
             IntValidator validator = new IntValidator();
             if (!validator.isValid(birthYear)) {
                 fail(req, "birthYear");
-                failed = true;
+                fail(req, "birthYear-number");
             }
+
+            boolean failed = marked(req, "failed");
+
             if (!failed) {
                 User updated = new User(user.id, username, user.passHash, email, firstName, lastName, Integer.parseInt(birthYear), user.isAdmin);
                 updated.save(db);
                 session.setAttribute("user", updated);
-                req.setAttribute("success", "");
+                mark(req, "success");
             }
         }
 
-        req.getRequestDispatcher("/user/profile.jsp").forward(req,resp);
+        req.getRequestDispatcher("/user/profile.jsp").forward(req, resp);
+    }
+
+    private String checkTaken(DB db,HttpServletRequest req,String field,String current){
+        String parameter = req.getParameter(field);
+        if (entries(db, field, parameter) != 0 && !parameter.equals(current)) {
+            fail(req,field);
+            fail(req,field+"-taken");
+        }
+        return parameter;
+    }
+
+    private String spaceCheck(HttpServletRequest req,String field){
+        String parameter = req.getParameter(field);
+        if(parameter.contains(" ")){
+            fail(req, field);
+            fail(req,field+"-space");
+        }
+        return parameter;
     }
 
     private void fail(HttpServletRequest req, String field) {
-        req.setAttribute("fail-"+field, new Object());
+        mark(req, "failed");
+        mark(req, "fail-" + field);
     }
 
     private int entries(DB db, String field, String value) {

@@ -1,5 +1,12 @@
 <%--Created by Ilan Godik--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page import="static util.ServletUtil.*" %>
+<%!
+    public static String mText(HttpServletRequest req,String field,String msg){
+        if(marked(req,field)) return msg+"<br/>";
+        else return "";
+    }
+%>
 <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
@@ -27,26 +34,30 @@
             </div>
 
             <form class="profile" action="/profile" method="post">
-                <%if (request.getAttribute("success") != null) {%>
-                <div class="status">
+                <%if (marked(request, "success")) {%>
+                <div class="status success">
                     נתונים עודכנו בהצלחה!
+                </div>
+                <%}else if(marked(request, "failed")){%>
+                <div class="status failure">
+                    <%=mText(request,"fail-username-space","רווח בשם משתמש")%>
+                    <%=mText(request,"fail-username-taken","שם מתשמש תפוס")%>
+                    <%=mText(request,"fail-email-space","רווח באימייל")%>
+                    <%=mText(request,"fail-email-taken","אימייל תפוס")%>
+                    <%=mText(request,"fail-firstName-space","רווח בשם פרטי")%>
+                    <%=mText(request,"fail-lastName-space","רווח בשם משפחה")%>
+                    <%=mText(request,"fail-birthYear-number","אנא וודא כי ישנו מספר בשנת הלידה")%>
                 </div>
                 <%}%>
                 <div class="field">
                     <label for="username">שם משתמש:</label>
                     <input type="text" name="username" id="username" value="<%=user.username%>"
-                           class="<%=request.getAttribute("fail-username")!=null||request.getAttribute("fail-username-taken")!=null?"fail":""%>"/>
-                    <%if (request.getAttribute("fail-username-taken") != null) {%>
-                    <span>תפוס</span>
-                    <%}%>
+                           class="<%=marked(request,"fail-username")?"fail":""%>"/>
                 </div>
                 <div class="field">
                     <label for="email">אימייל:</label>
                     <input type="text" name="email" id="email" value="<%=user.email%>"
-                           class="<%=request.getAttribute("fail-email")!=null||request.getAttribute("fail-email-taken")!=null?"fail":""%>"/>
-                    <%if (request.getAttribute("fail-email-taken") != null) {%>
-                    <span>תפוס</span>
-                    <%}%>
+                           class="<%=marked(request,"fail-email")?"fail":""%>"/>
                 </div>
                 <div class="field">
                     <label for="firstName">שם פרטי:</label>
