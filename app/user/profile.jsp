@@ -2,8 +2,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page import="static util.ServletUtil.*" %>
 <%!
-    public static String mText(HttpServletRequest req,String field,String msg){
-        if(marked(req,field)) return msg+"<br/>";
+    public static String mText(HttpServletRequest req, String field, String msg) {
+        if (marked(req, field)) return msg + "<br/>";
         else return "";
     }
 %>
@@ -38,15 +38,15 @@
                 <div class="status success">
                     נתונים עודכנו בהצלחה!
                 </div>
-                <%}else if(marked(request, "failed")){%>
+                <%} else if (marked(request, "failed")) {%>
                 <div class="status failure">
-                    <%=mText(request,"fail-username-space","רווח בשם משתמש")%>
-                    <%=mText(request,"fail-username-taken","שם מתשמש תפוס")%>
-                    <%=mText(request,"fail-email-space","רווח באימייל")%>
-                    <%=mText(request,"fail-email-taken","אימייל תפוס")%>
-                    <%=mText(request,"fail-firstName-space","רווח בשם פרטי")%>
-                    <%=mText(request,"fail-lastName-space","רווח בשם משפחה")%>
-                    <%=mText(request,"fail-birthYear-number","אנא וודא כי ישנו מספר בשנת הלידה")%>
+                    <%=mText(request, "fail-username-space", "רווח בשם משתמש")%>
+                    <%=mText(request, "fail-username-taken", "שם מתשמש תפוס")%>
+                    <%=mText(request, "fail-email-space", "רווח באימייל")%>
+                    <%=mText(request, "fail-email-taken", "אימייל תפוס")%>
+                    <%=mText(request, "fail-firstName-space", "רווח בשם פרטי")%>
+                    <%=mText(request, "fail-lastName-space", "רווח בשם משפחה")%>
+                    <%=mText(request, "fail-birthYear-number", "אנא וודא כי ישנו מספר בשנת הלידה")%>
                 </div>
                 <%}%>
                 <div class="field">
