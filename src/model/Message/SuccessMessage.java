@@ -1,7 +1,7 @@
 //Created By Ilan Godik
 package model.Message;
 
-public class SuccessMessage extends Message{
+public class SuccessMessage extends Message {
 
     protected SuccessMessage(String message) {
         super(message);

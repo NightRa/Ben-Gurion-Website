@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body dir="rtl">
-        <%@include file="menu.jsp"%>
+        <%@include file="menu.jsp" %>
         <div class="container">
             <div class="hero-unit center">
                 <h1>מורשת בן גוריון</h1>
@@ -20,7 +20,8 @@
 
                 <p>אתר זה הוא בגדר עבודה לבגרות בנושא תכנות אינטרנט - JSP.</p>
 
-                <a href="#" class="btn btn-primary btn-large" style="margin-top: 25px;"><span class="extra">להמשך קריאה </span>אודות האתר</a>
+                <a href="#" class="btn btn-primary btn-large" style="margin-top: 25px;"><span
+                        class="extra">להמשך קריאה </span>אודות האתר</a>
             </div>
             <div class="row-fluid">
                 <div class="span6">

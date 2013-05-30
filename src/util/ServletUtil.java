@@ -8,7 +8,7 @@ public class ServletUtil {
         req.setAttribute(field, new Object());
     }
 
-    public static boolean marked(HttpServletRequest req, String field){
-        return req.getAttribute(field)!=null;
+    public static boolean marked(HttpServletRequest req, String field) {
+        return req.getAttribute(field) != null;
     }
 }

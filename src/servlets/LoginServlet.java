@@ -14,13 +14,15 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
         String username = req.getParameter("inputUsername");
         String password = req.getParameter("inputPassword");
         HttpSession session = req.getSession(true);
         Object user = session.getAttribute("user");
-        if(user==null){
+        if (user == null) {
             Login login = new Login(new RealDB(), username, password);
-            if(login.isValid()) session.setAttribute("user", login.getUser());
+            if (login.isValid()) session.setAttribute("user", login.getUser());
         }
         resp.sendRedirect("");
 //        getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);

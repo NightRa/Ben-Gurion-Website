@@ -31,8 +31,8 @@ public class User {
 
     public User create(DB db) {
         db.update("INSERT INTO users (username,password,email,privateName,lastName,birthYear) VALUES ('" + username + "','" + passHash + "','" + email + "','" + firstName + "','" + lastName + "','" + birthYear + "');");
-        Login login = new Login(db,username,passHash);
-        if(!login.isValid()) throw new IllegalStateException("Can't login after user creation.");
+        Login login = new Login(db, username, passHash);
+        if (!login.isValid()) throw new IllegalStateException("Can't login after user creation.");
         return login.getUser();
     }
 

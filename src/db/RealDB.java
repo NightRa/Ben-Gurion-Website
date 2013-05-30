@@ -6,11 +6,11 @@ import java.net.URISyntaxException;
 import java.sql.*;
 
 public class RealDB implements DB {
-    private Connection con;
+    public Connection con;
 
-    public static final boolean development = true;
+    public static final boolean development = false;
 
-    private Connection getRemoteConnection() throws URISyntaxException, SQLException {
+    public static Connection getRemoteConnection() throws URISyntaxException, SQLException {
         URI dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));
 
         String username = dbUri.getUserInfo().split(":")[0];
@@ -20,16 +20,16 @@ public class RealDB implements DB {
         return DriverManager.getConnection(dbUrl, username, password);
     }
 
-    public RealDB(){
+    public RealDB() {
         this("127.0.0.1", 3306, "website", "root", "root");
     }
 
     public RealDB(String ip, int port, String db, String user, String pass) {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            if(development){
+            if (development) {
                 con = DriverManager.getConnection("jdbc:mysql://" + ip + ":" + port + "/" + db, user, pass);
-            }else{
+            } else {
                 con = getRemoteConnection();
             }
         } catch (Exception e) {

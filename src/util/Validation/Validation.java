@@ -2,7 +2,7 @@
 package util.Validation;
 
 public class Validation {
-    public boolean isValid(String s){
+    public boolean isValid(String s) {
         return !s.contains(" ");
     }
 }

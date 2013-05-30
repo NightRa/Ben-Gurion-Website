@@ -5,10 +5,10 @@ public class IntValidator extends Validation {
     @Override
     public boolean isValid(String s) {
         boolean valid = super.isValid(s);
-        try{
+        try {
             Integer.parseInt(s);
             return valid;
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }

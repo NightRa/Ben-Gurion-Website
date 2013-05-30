@@ -21,7 +21,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="javax.servlet-api" level="application" />
-    <orderEntry type="library" scope="RUNTIME" name="mysql-connector-java-5.1.25-bin" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1" level="project" />
   </component>
 </module>
 

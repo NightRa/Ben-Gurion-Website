@@ -1,7 +1,7 @@
 //Created By Ilan Godik
 package model.Message;
 
-public class ErrorMessage extends Message{
+public class ErrorMessage extends Message {
     protected ErrorMessage(String message) {
         super(message);
     }

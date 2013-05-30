@@ -3,7 +3,7 @@ package util.Validation;
 
 import db.DB;
 
-public class QuantifiedValidation extends Validation{
+public class QuantifiedValidation extends Validation {
     private final DB db;
     public final String table;
     public final String field;

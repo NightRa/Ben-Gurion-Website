@@ -8,8 +8,7 @@
           <element id="module-output" name="Website" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="application" name="scala-library" />
-          <element id="library" level="project" name="mysql-connector-java-5.1.25-bin" />
+          <element id="library" level="project" name="mysql-connector-java-5.1" />
         </element>
       </element>
     </root>

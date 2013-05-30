@@ -17,6 +17,7 @@
     <body dir="rtl">
         <%@include file="../menu.jsp" %>
 
+
     </body>
 </html>
 <%}%>

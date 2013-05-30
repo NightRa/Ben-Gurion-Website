@@ -1,7 +1,7 @@
 @import "util/util";
 @import "components/menu";
 
-@text-color:#333333;
+@text-color: #333333;
 
 body {
   padding: 0;
@@ -13,7 +13,7 @@ body {
   color: @text-color;
 }
 
-.box{
+.box {
   .shadow;
   background-color: #eeeeee;
   .rounded(6px);
@@ -24,12 +24,12 @@ body {
   margin: 75px auto auto;
   .transition(width 1s);
 
-  @media (max-width: @medium){
+  @media (max-width: @medium) {
     width: 90%;
   }
 }
 
-img{
+img {
   border: 0;
 }
 
@@ -45,17 +45,50 @@ h6 {
   line-height: 20px;
   color: inherit;
 }
+
 h3 {
   font-size: 24.5px;
 }
+
 h2 {
   font-size: 31.5px;
 }
+
 h1,
 h2,
 h3 {
   line-height: 40px;
 }
+
 p {
   margin: 0 0 10px;
+}
+
+.base() {
+  .box;
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  @media (max-width:@small) {
+    padding-right: 10px;
+  }
+}
+
+.success {
+  border: #1f991f solid 1px;
+  background-color: #cef0c0;
+}
+
+.failure {
+  border: #992020 solid 1px;
+  background-color: #f05918;
+}
+
+.status {
+  padding: 5px;
+  margin: 15px auto;
+  width: 80%;
+  .rounded(6px);
+  font-weight: bold;
+  .center;
 }

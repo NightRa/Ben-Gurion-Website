@@ -33,40 +33,40 @@
 
 
         <%} else {%>
-            <a href="">הרשמה</a>
-            <!--data-target to fix a jump bug-->
-            <a onclick="toggle_visibility('login');" data-target="#">התחברות</a>
+        <a href="">הרשמה</a>
+        <!--data-target to fix a jump bug-->
+        <a onclick="toggle_visibility('login');" data-target="#">התחברות</a>
 
-            <form action="/login" method="post" class="login" id="login">
-                <table>
-                    <tr>
-                        <td><label for="inputUsername">שם משתמש</label></td>
-                        <td><input maxlength="32" type="text" id="inputUsername" name="inputUsername"
-                                   placeholder="שם משתמש"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="inputPassword">סיסמא</label></td>
-                        <td><input maxlength="32" type="password" id="inputPassword" name="inputPassword"
-                                   placeholder="סיסמא"></td>
-                    </tr>
-                </table>
-                <button type="submit" class="btn btn-orange">כניסה</button>
-            </form>
-            <script type="text/javascript">
-                function toggle_visibility(id) {
-                    var e = document.getElementById(id);
-                    if (e.style.display == 'block')
-                        e.style.display = 'none';
-                    else
-                        e.style.display = 'block';
-                }
-            </script>
+        <form action="/login" method="post" class="login" id="login">
+            <table>
+                <tr>
+                    <td><label for="inputUsername">שם משתמש</label></td>
+                    <td><input maxlength="32" type="text" id="inputUsername" name="inputUsername"
+                               placeholder="שם משתמש"></td>
+                </tr>
+                <tr>
+                    <td><label for="inputPassword">סיסמא</label></td>
+                    <td><input maxlength="32" type="password" id="inputPassword" name="inputPassword"
+                               placeholder="סיסמא"></td>
+                </tr>
+            </table>
+            <button type="submit" class="btn btn-orange">כניסה</button>
+        </form>
+        <script type="text/javascript">
+            function toggle_visibility(id) {
+                var e = document.getElementById(id);
+                if (e.style.display == 'block')
+                    e.style.display = 'none';
+                else
+                    e.style.display = 'block';
+            }
+        </script>
         <%}%>
     </div>
 </div>
 <%
     Object msg = request.getAttribute("msg");
-    if(msg!=null){
+    if (msg != null) {
 
 %>
 <div class="msg">

@@ -13,15 +13,15 @@ public class MsgContainer {
         this.successes = successes;
     }
 
-    public MsgContainer(){
-        this(new Nil<String>(),new Nil<String>());
+    public MsgContainer() {
+        this(new Nil<String>(), new Nil<String>());
     }
 
-    public MsgContainer addError(String msg){
-        return new MsgContainer(errors.add(msg),successes);
+    public MsgContainer addError(String msg) {
+        return new MsgContainer(errors.add(msg), successes);
     }
 
-    public MsgContainer addSuccess(String msg){
-        return new MsgContainer(errors,successes.add(msg));
+    public MsgContainer addSuccess(String msg) {
+        return new MsgContainer(errors, successes.add(msg));
     }
 }
