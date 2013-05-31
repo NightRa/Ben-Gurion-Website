@@ -26,7 +26,6 @@
     *background-color: #e6e6e6;
     /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
     border: 1px solid #cccccc;
     *border: 0;
     border-bottom-color: #b3b3b3;
@@ -52,7 +51,7 @@
 
 .btn:active,
 .btn.active {
-    background-color: #cccccc       \9;
+    background-color: #cccccc \9;
 }
 
 .btn:first-child {
@@ -180,7 +179,6 @@ input[type="button"].btn-block {
     *background-color: #0044cc;
     /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
 .btn-primary:hover,
@@ -196,7 +194,7 @@ input[type="button"].btn-block {
 
 .btn-primary:active,
 .btn-primary.active {
-    background-color: #003399       \9;
+    background-color: #003399 \9;
 }
 
 .btn-warning {
@@ -215,7 +213,6 @@ input[type="button"].btn-block {
     *background-color: #f89406;
     /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
 .btn-warning:hover,
@@ -231,7 +228,7 @@ input[type="button"].btn-block {
 
 .btn-warning:active,
 .btn-warning.active {
-    background-color: #c67605       \9;
+    background-color: #c67605 \9;
 }
 
 .btn-danger {
@@ -250,7 +247,6 @@ input[type="button"].btn-block {
     *background-color: #bd362f;
     /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
 .btn-danger:hover,
@@ -266,7 +262,7 @@ input[type="button"].btn-block {
 
 .btn-danger:active,
 .btn-danger.active {
-    background-color: #942a25       \9;
+    background-color: #942a25 \9;
 }
 
 .btn-success {
@@ -285,7 +281,6 @@ input[type="button"].btn-block {
     *background-color: #51a351;
     /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
 .btn-success:hover,
@@ -301,7 +296,7 @@ input[type="button"].btn-block {
 
 .btn-success:active,
 .btn-success.active {
-    background-color: #408140       \9;
+    background-color: #408140 \9;
 }
 
 .btn-info {
@@ -320,7 +315,6 @@ input[type="button"].btn-block {
     *background-color: #2f96b4;
     /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
 .btn-info:hover,
@@ -336,7 +330,7 @@ input[type="button"].btn-block {
 
 .btn-info:active,
 .btn-info.active {
-    background-color: #24748c       \9;
+    background-color: #24748c \9;
 }
 
 .btn-inverse {
@@ -355,7 +349,6 @@ input[type="button"].btn-block {
     *background-color: #222222;
     /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
 .btn-inverse:hover,
@@ -371,7 +364,7 @@ input[type="button"].btn-block {
 
 .btn-inverse:active,
 .btn-inverse.active {
-    background-color: #080808       \9;
+    background-color: #080808 \9;
 }
 
 button.btn,
@@ -469,5 +462,5 @@ input[type="submit"].btn.btn-mini {
 
 .btn-orange:active,
 .btn-orange.active {
-    background-color: #c05913       \9;
+    background-color: #c05913           \9;
 }
