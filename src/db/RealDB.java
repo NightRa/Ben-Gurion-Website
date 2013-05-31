@@ -8,7 +8,7 @@ import java.sql.*;
 public class RealDB implements DB {
     public Connection con;
 
-    public static final boolean development = false;
+    public static final boolean development = true;
 
     public static Connection getRemoteConnection() throws URISyntaxException, SQLException {
         URI dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));

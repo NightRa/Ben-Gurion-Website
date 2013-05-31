@@ -33,7 +33,7 @@
 
 
         <%} else {%>
-        <a href="">הרשמה</a>
+        <a href="/user/register.jsp">הרשמה</a>
         <!--data-target to fix a jump bug-->
         <a onclick="toggle_visibility('login');" data-target="#">התחברות</a>
 

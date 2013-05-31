@@ -1,16 +1,9 @@
 @import "style";
-
-@point1: 700px;
-
-h1, .profile, .profile-menu {
-  .base;
-}
-
-h1 {
-  .center;
-}
+@import "components/status";
+@import "register";
 
 .profile-menu {
+  .base;
   @media (min-width:@point1) {
     float: right;
     width: 25%;
@@ -51,26 +44,10 @@ h1 {
   }
 }
 
-.profile {
+.fields {
   @media (min-width:@point1) {
     float: left;
     width: 60%;
   }
-  margin-bottom: 30px;
 }
 
-label {
-  width: 30%;
-  display: inline-block;
-  margin-right: 30px;
-}
-
-.field {
-  width: 100%;
-}
-
-@media (max-width:440px) {
-  input {
-    width: 120px;
-  }
-}

@@ -1,5 +1,32 @@
 @import "style";
+@import "components/status";
 
-.h1 {
+@point1: 700px;
+
+h1, .fields {
+  .base;
   .center;
+}
+
+.fields {
+  margin: 20px auto;
+  @media (min-width:@point1) {
+    width: 60%;
+  }
+}
+
+.fields input {
+  width: 40%;
+}
+
+.fields label {
+  display: inline-block;
+  width: 75px;
+  @media (min-width:@point1) {
+    width: 150px;
+  }
+}
+
+.field {
+  display: block;
 }

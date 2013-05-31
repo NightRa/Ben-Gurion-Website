@@ -1,12 +1,7 @@
 <%--Created by Ilan Godik--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page import="static util.ServletUtil.*" %>
-<%!
-    public static String mText(HttpServletRequest req, String field, String msg) {
-        if (marked(req, field)) return msg + "<br/>";
-        else return "";
-    }
-%>
+<%@page import="static util.Input.*" %>
 <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
@@ -33,7 +28,7 @@
                 <a href="/user/grades.jsp">ציוני שאלון</a>
             </div>
 
-            <form class="profile" action="/profile" method="post">
+            <form class="fields" action="/profile" method="post">
                 <%if (marked(request, "success")) {%>
                 <div class="status success">
                     נתונים עודכנו בהצלחה!
@@ -49,31 +44,12 @@
                     <%=mText(request, "fail-birthYear-number", "אנא וודא כי ישנו מספר בשנת הלידה")%>
                 </div>
                 <%}%>
-                <div class="field">
-                    <label for="username">שם משתמש:</label>
-                    <input type="text" name="username" id="username" value="<%=user.username%>"
-                           class="<%=marked(request,"fail-username")?"fail":""%>"/>
-                </div>
-                <div class="field">
-                    <label for="email">אימייל:</label>
-                    <input type="text" name="email" id="email" value="<%=user.email%>"
-                           class="<%=marked(request,"fail-email")?"fail":""%>"/>
-                </div>
-                <div class="field">
-                    <label for="firstName">שם פרטי:</label>
-                    <input type="text" name="firstName" id="firstName" value="<%=user.firstName%>"
-                           class="<%=request.getAttribute("fail-firstName")!=null?"fail":""%>"/>
-                </div>
-                <div class="field">
-                    <label for="lastName">שם משפחה:</label>
-                    <input type="text" name="lastName" id="lastName" value="<%=user.lastName%>"
-                           class="<%=request.getAttribute("fail-lastName")!=null?"fail":""%>"/>
-                </div>
-                <div class="field">
-                    <label for="birthYear">שנת לידה:</label>
-                    <input type="text" name="birthYear" id="birthYear" value="<%=user.birthYear%>"
-                           class="<%=request.getAttribute("fail-birthYear")!=null?"fail":""%>"/>
-                </div>
+
+                <%=textInput(request, "username", "שם משתמש")%>
+                <%=textInput(request, "email", "אימייל")%>
+                <%=textInput(request, "firstName", "שם פרטי")%>
+                <%=textInput(request, "lastName", "שם משפחה")%>
+                <%=textInput(request, "birthYear", "שנת לידה")%>
 
                 <div class="center">
                     <button type="submit" class="btn btn-success">שמירה</button>
