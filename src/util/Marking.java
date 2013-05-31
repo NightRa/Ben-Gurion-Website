@@ -3,7 +3,7 @@ package util;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class ServletUtil {
+public class Marking {
     public static void mark(HttpServletRequest req, String field) {
         req.setAttribute(field, new Object());
     }

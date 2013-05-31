@@ -1,6 +1,6 @@
 <%--Created by Ilan Godik--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@page import="static util.ServletUtil.*" %>
+<%@page import="static util.Marking.*" %>
 <%@page import="static util.Input.*" %>
 <%
     request.setCharacterEncoding("UTF-8");

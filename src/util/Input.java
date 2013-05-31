@@ -3,7 +3,7 @@ package util;
 
 import javax.servlet.http.HttpServletRequest;
 
-import static util.ServletUtil.marked;
+import static util.Marking.marked;
 
 public class Input {
     public static String mText(HttpServletRequest req, String field, String msg) {
