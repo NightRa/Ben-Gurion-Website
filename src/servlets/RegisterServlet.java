@@ -23,21 +23,21 @@ public class RegisterServlet extends HttpServlet {
         DB db = new RealDB();
         InputValidation valid = new InputValidation(req, db);
 
-        String username = valid.spaceCheck("username");
+        String username = valid.check("username");
         valid.checkTaken("username", "");
 
-        String email = valid.spaceCheck("email");
+        String email = valid.check("email");
         valid.checkTaken("email", "");
 
-        String pass = valid.spaceCheck("password");
-        String passCheck = valid.spaceCheck("passwordCheck");
+        String pass = valid.check("password");
+        String passCheck = valid.check("passwordCheck");
 
         if (!pass.equals(passCheck)) {
             valid.fail("passwordCheck");
         }
 
-        String firstName = valid.spaceCheck("firstName");
-        String lastName = valid.spaceCheck("lastName");
+        String firstName = valid.check("firstName");
+        String lastName = valid.check("lastName");
 
         String birthYear = req.getParameter("birthYear");
         IntValidator validator = new IntValidator();

@@ -1,10 +1,12 @@
 //Created By Ilan Godik
 package servlets;
 
+import db.DB;
 import db.RealDB;
+import logic.Login;
 import model.User;
+import util.CryptoUtil;
 import util.Validation.InputValidation;
-import util.Validation.IntValidator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +17,7 @@ import java.io.IOException;
 
 import static util.Marking.mark;
 
-public class ProfileServlet extends HttpServlet {
+public class ChangePasswordServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
@@ -23,35 +25,32 @@ public class ProfileServlet extends HttpServlet {
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("user");
         if (user != null) {
-            RealDB db = new RealDB();
+            DB db = new RealDB();
             InputValidation valid = new InputValidation(req, db);
 
-            String username = valid.check("username");
-            valid.checkTaken("username", user.username);
+            String oldPass = valid.check("oldPassword");
+            String newPass = valid.check("newPassword");
+            String passCheck = valid.check("passwordCheck");
 
-            String email = valid.check("email");
-            valid.checkTaken("email", user.email);
+            Login login = new Login(db, user.username, oldPass);
+            if (!login.isValid()) {
+                valid.fail("password-incorrect");
+                valid.fail("oldPassword");
+            }
 
-            String firstName = valid.check("firstName");
-            String lastName = valid.check("lastName");
-
-            String birthYear = req.getParameter("birthYear");
-            IntValidator validator = new IntValidator();
-            if (!validator.isValid(birthYear)) {
-                valid.fail("birthYear");
-                valid.fail("birthYear-number");
+            if (!newPass.equals(passCheck)) {
+                valid.fail("passwordCheck");
             }
 
             if (!valid.hasFailed()) {
-                User updated = new User(user.id, username, user.passHash, email, firstName, lastName, Integer.parseInt(birthYear), user.isAdmin);
+                String passHash = CryptoUtil.md5(newPass);
+                User updated = new User(user.id, user.username, passHash, user.email, user.firstName, user.lastName, user.birthYear, user.isAdmin);
                 updated.save(db);
                 session.setAttribute("user", updated);
                 mark(req, "success");
             }
         }
 
-        req.getRequestDispatcher("/user/profile.jsp").forward(req, resp);
+        req.getRequestDispatcher("/user/password.jsp").forward(req, resp);
     }
-
-
 }

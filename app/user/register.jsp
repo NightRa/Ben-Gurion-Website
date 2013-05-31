@@ -30,6 +30,7 @@
 
                 <%} else if (marked(request, "failed")) {%>
                 <div class="status failure">
+                    <%=mText(request, "fail-empty", "אין להשאיר שדות ריקים")%>
                     <%=mText(request, "fail-username-space", "רווח בשם משתמש")%>
                     <%=mText(request, "fail-username-taken", "שם מתשמש תפוס")%>
                     <%=mText(request, "fail-email-space", "רווח באימייל")%>

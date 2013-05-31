@@ -5,7 +5,6 @@ import db.DB;
 import db.RealDB;
 import logic.Login;
 import model.User;
-import util.CryptoUtil;
 import util.Validation.InputValidation;
 
 import javax.servlet.ServletException;
@@ -15,9 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-import static util.Marking.mark;
-
-public class ChangePassword extends HttpServlet {
+public class DeleteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
@@ -28,29 +25,21 @@ public class ChangePassword extends HttpServlet {
             DB db = new RealDB();
             InputValidation valid = new InputValidation(req, db);
 
-            String oldPass = valid.spaceCheck("oldPassword");
-            String newPass = valid.spaceCheck("newPassword");
-            String passCheck = valid.spaceCheck("passwordCheck");
+            String oldPass = valid.check("password");
 
             Login login = new Login(db, user.username, oldPass);
             if (!login.isValid()) {
                 valid.fail("password-incorrect");
-                valid.fail("oldPassword");
-            }
-
-            if (!newPass.equals(passCheck)) {
-                valid.fail("passwordCheck");
+                valid.fail("password");
             }
 
             if (!valid.hasFailed()) {
-                String passHash = CryptoUtil.md5(newPass);
-                User updated = new User(user.id, user.username, passHash, user.email, user.firstName, user.lastName, user.birthYear, user.isAdmin);
-                updated.save(db);
-                session.setAttribute("user", updated);
-                mark(req, "success");
+                user.delete(db);
+                session.setAttribute("user", null);
+                resp.sendRedirect("/");
+            } else {
+                req.getRequestDispatcher("/user/delete.jsp").forward(req, resp);
             }
         }
-
-        req.getRequestDispatcher("/user/password.jsp").forward(req, resp);
     }
 }

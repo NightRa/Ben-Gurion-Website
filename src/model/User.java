@@ -35,6 +35,10 @@ public class User {
         return login.getUser();
     }
 
+    public void delete(DB db){
+        db.update("DELETE FROM users WHERE ID="+id+"");
+    }
+
     public int getId() {
         return id;
     }

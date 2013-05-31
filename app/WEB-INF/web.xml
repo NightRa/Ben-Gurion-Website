@@ -44,11 +44,20 @@
 
     <servlet>
         <servlet-name>ChangePassword</servlet-name>
-        <servlet-class>servlets.ChangePassword</servlet-class>
+        <servlet-class>servlets.ChangePasswordServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ChangePassword</servlet-name>
         <url-pattern>/password</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteUser</servlet-name>
+        <servlet-class>servlets.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteUser</servlet-name>
+        <url-pattern>/delete</url-pattern>
     </servlet-mapping>
 
 </web-app>

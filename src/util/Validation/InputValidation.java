@@ -30,15 +30,29 @@ public class InputValidation {
         return parameter;
     }
 
-
     //To make sure there are no SQL injections.
-    public String spaceCheck(String field) {
+    public String spaceCheck(String field){
         String parameter = req.getParameter(field);
         if (parameter.contains(" ")) {
             fail(field);
             fail(field + "-space");
         }
         return parameter;
+    }
+
+    public String emptyCheck(String field){
+        String parameter = req.getParameter(field);
+        if (parameter.isEmpty()) {
+            fail(field);
+            fail("empty");
+        }
+        return parameter;
+    }
+
+
+    public String check(String field) {
+        spaceCheck(field);
+        return emptyCheck(field);
     }
 
     public void fail(String field) {
