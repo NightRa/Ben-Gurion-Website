@@ -45,11 +45,11 @@
                 </div>
                 <%}%>
 
-                <%=textInput(request, "username", "שם משתמש")%>
-                <%=textInput(request, "email", "אימייל")%>
-                <%=textInput(request, "firstName", "שם פרטי")%>
-                <%=textInput(request, "lastName", "שם משפחה")%>
-                <%=textInput(request, "birthYear", "שנת לידה")%>
+                <%=textInput(request, "username", "שם משתמש", user.username)%>
+                <%=textInput(request, "email", "אימייל", user.email)%>
+                <%=textInput(request, "firstName", "שם פרטי", user.firstName)%>
+                <%=textInput(request, "lastName", "שם משפחה", user.lastName)%>
+                <%=textInput(request, "birthYear", "שנת לידה", String.valueOf(user.birthYear))%>
 
                 <div class="center">
                     <button type="submit" class="btn btn-success">שמירה</button>

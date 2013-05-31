@@ -12,16 +12,33 @@ public class Input {
     }
 
     public static String mField(HttpServletRequest req, String name, String text, String type) {
-        String cssClass = marked(req, "fail-" + name) ? "class='fail'" : "";
+        return mField(req, name, text, type, null);
+    }
+
+    public static String mField(HttpServletRequest req, String name, String text, String type, String value) {
+        String cssClass = marked(req, "fail-" + name) ? "class='fail' " : "";
+        String parameter = req.getParameter(name);
+        if (value == null) {
+            if (parameter != null) {
+                value = parameter;
+            } else {
+                value = "";
+            }
+        }
+        String valueAtt = "value='" + value + "' ";
         String template =
             "<div class='field'>" +
                 "   <label for='" + name + "'>" + text + ":</label>" +
-                "   <input type='" + type + "' name='" + name + "' id='" + name + "' " + cssClass + "/>" +
+                "   <input type='" + type + "' name='" + name + "' id='" + name + "' " + cssClass + valueAtt + "/>" +
                 "</div>";
         return template;
     }
 
     public static String textInput(HttpServletRequest req, String name, String text) {
-        return mField(req, name, text, "text");
+        return textInput(req, name, text, null);
+    }
+
+    public static String textInput(HttpServletRequest req, String name, String text, String value) {
+        return mField(req, name, text, "text", value);
     }
 }
