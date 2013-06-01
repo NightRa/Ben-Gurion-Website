@@ -29,9 +29,7 @@
 
             <div class="profile-menu">
                 <a class="active" href="/admin/users.jsp">עריכת משתמשים</a>
-                <a href="/user/password.jsp">שינוי סיסמא</a>
-                <a href="/user/delete.jsp">מחיקת משתמש</a>
-                <a href="/user/grades.jsp">ציוני שאלון</a>
+                <a href="/user/password.jsp">שאלון</a>
             </div>
 
             <form class="fields" id="fields" action="/editUser" method="post" onsubmit="return validate()">
