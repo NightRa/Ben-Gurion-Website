@@ -29,17 +29,19 @@
                 <a href="/user/grades.jsp">ציוני שאלון</a>
             </div>
 
-            <form class="fields" action="/delete" method="post">
+            <form class="fields" id="fields" action="/delete" method="post" onsubmit="return validate()">
                 <%if (marked(request, "success")) {%>
                 <div class="status success">
                     סיסמא שונתה בהצלחה!
                 </div>
-                <%} else if (marked(request, "failed")) {%>
-                <div class="status failure">
+                <%}%>
+
+                <div class="status failure" id="fail"
+                     style="display: <%=marked(request,"failed")?"block":"none"%>">
                     <%=mText(request, "fail-empty", "אין להשאיר שדות ריקים")%>
                     <%=mText(request, "fail-password-incorrect", "סיסמא שגויה")%>
                 </div>
-                <%}%>
+
 
                 <%=mField(request, "password", "סיסמא נוכחית", "password")%>
 
@@ -48,6 +50,14 @@
                 </div>
             </form>
         </div>
+
+        <script src="../js/validation/Validation.js"></script>
+        <script type="text/javascript">
+            function checks() {
+                return  check("password", "סיסמא ריקה", checkEmpty) &
+                        check("password", "רווח בסיסמא", checkSpace)
+            }
+        </script>
     </body>
 </html>
 <%}%>

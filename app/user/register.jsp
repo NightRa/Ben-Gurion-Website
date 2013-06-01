@@ -23,13 +23,15 @@
         <div class="container">
             <h1>הרשמה</h1>
 
-            <form class="fields" action="/register" method="post">
+            <form class="fields" id="fields" action="/register" method="post" onsubmit="return validate()">
                 <%if (marked(request, "success")) {%>
 
                 <div class="status success">נתונים עודכנו בהצלחה!</div>
 
-                <%} else if (marked(request, "failed")) {%>
-                <div class="status failure">
+                <%}%>
+
+                <div class="status failure" id="fail"
+                     style="display: <%=marked(request,"failed")?"block":"none"%>">
                     <%=mText(request, "fail-empty", "אין להשאיר שדות ריקים")%>
                     <%=mText(request, "fail-username-space", "רווח בשם משתמש")%>
                     <%=mText(request, "fail-username-taken", "שם מתשמש תפוס")%>
@@ -41,7 +43,6 @@
                     <%=mText(request, "fail-lastName-space", "רווח בשם משפחה")%>
                     <%=mText(request, "fail-birthYear-number", "אנא וודא כי ישנו מספר בשנת הלידה")%>
                 </div>
-                <%}%>
 
                 <%=textInput(request, "username", "שם משתמש")%>
                 <%=textInput(request, "email", "אימייל")%>
@@ -56,6 +57,27 @@
                 </div>
             </form>
         </div>
+
+        <script src="../js/validation/Validation.js"></script>
+        <script type="text/javascript">
+            function checks() {
+                return check("username", "רווח בשם משתמש", checkSpace) &
+                        check("username", "שם משתמש ריק", checkEmpty) &
+                        check("email", "רווח באימייל", checkSpace) &
+                        check("email", "אימייל ריק", checkEmpty) &
+                        check("email", "אימייל לא תקין", checkEmail) &
+                        check("firstName", "רווח בשם פרטי", checkSpace) &
+                        check("firstName", "שם פרטי ריק", checkEmpty) &
+                        check("lastName", "רווח בשם משפחה", checkSpace) &
+                        check("lastName", "שם משפחה ריק", checkEmpty) &
+                        check("birthYear", "אנא וודא כי ישנו מספר בשנת הלידה", checkNumber) &
+                        check("password", "סיסמא ריקה", checkEmpty) &
+                        check("password", "רווח בסיסמא", checkSpace) &
+                        checkEquals("password", "passwordCheck", "סיסמאות לא מסתאימות")
+            }
+        </script>
+
+
     </body>
 </html>
 <%}%>

@@ -16,25 +16,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="../css/profile.css"/>
         <link rel="stylesheet" href="../css/buttons.css"/>
-        <script src="../js/validation/Validation.js"></script>
-        <script type="text/javascript">
-            function validate() {
-                reset()
-
-                return  check("username", "רווח בשם משתמש", checkSpace) &
-                        check("username", "שם משתמש ריק", checkEmpty) &
-                        check("email", "רווח באימייל", checkSpace) &
-                        check("email", "אימייל ריק", checkEmpty) &
-                        check("email", "אימייל לא תקין", checkEmail) &
-                        check("firstName", "רווח בשם פרטי", checkSpace) &
-                        check("firstName", "שם פרטי ריק", checkEmpty) &
-                        check("lastName", "רווח בשם משפחה", checkSpace) &
-                        check("lastName", "שם משפחה ריק", checkEmpty) &
-                        check("birthYear", "אנא וודא כי ישנו מספר בשנת הלידה", checkNumber) != 0 ? true : false
-
-            }
-        </script>
-
     </head>
     <body dir="rtl">
         <%@include file="../menu.jsp" %>
@@ -78,6 +59,22 @@
                 </div>
             </form>
         </div>
+
+        <script src="../js/validation/Validation.js"></script>
+        <script type="text/javascript">
+            function checks() {
+                return  check("username", "רווח בשם משתמש", checkSpace) &
+                        check("username", "שם משתמש ריק", checkEmpty) &
+                        check("email", "רווח באימייל", checkSpace) &
+                        check("email", "אימייל ריק", checkEmpty) &
+                        check("email", "אימייל לא תקין", checkEmail) &
+                        check("firstName", "רווח בשם פרטי", checkSpace) &
+                        check("firstName", "שם פרטי ריק", checkEmpty) &
+                        check("lastName", "רווח בשם משפחה", checkSpace) &
+                        check("lastName", "שם משפחה ריק", checkEmpty) &
+                        check("birthYear", "אנא וודא כי ישנו מספר בשנת הלידה", checkNumber)
+            }
+        </script>
     </body>
 </html>
 <%}%>

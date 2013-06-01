@@ -29,19 +29,21 @@
                 <a href="/user/grades.jsp">ציוני שאלון</a>
             </div>
 
-            <form class="fields" action="/password" method="post">
+            <form class="fields" id="fields" action="/password" method="post" onsubmit="return validate()">
                 <%if (marked(request, "success")) {%>
                 <div class="status success">
                     סיסמא שונתה בהצלחה!
                 </div>
-                <%} else if (marked(request, "failed")) {%>
-                <div class="status failure">
+                <%}%>
+
+                <div class="status failure" id="fail"
+                     style="display: <%=marked(request,"failed")?"block":"none"%>">
                     <%=mText(request, "fail-empty", "אין להשאיר שדות ריקים")%>
                     <%=mText(request, "fail-password-incorrect", "סיסמא שגויה")%>
                     <%=mText(request, "fail-password-space", "רווח בסיסמא")%>
                     <%=mText(request, "fail-passwordCheck", "סיסמאות לא מתאימות")%>
                 </div>
-                <%}%>
+
 
                 <%=mField(request, "oldPassword", "סיסמא נוכחית", "password")%>
                 <%=mField(request, "newPassword", "סיסמא חדשה", "password")%>
@@ -51,6 +53,18 @@
                     <button type="submit" class="btn btn-success">שמירה</button>
                 </div>
             </form>
+
+
+            <script src="../js/validation/Validation.js"></script>
+            <script type="text/javascript">
+                function checks() {
+                    return  check("oldPassword", "סיסמא ישנה ריקה", checkEmpty) &
+                            check("oldPassword", "רווח בסיסמא ישנה", checkSpace) &
+                            check("newPassword", "סיסמא חדשה ריקה", checkEmpty) &
+                            check("newPassword", "רווח בסיסמא חדשה", checkSpace) &
+                            checkEquals("newPassword", "passwordCheck", "סיסמאות לא מסתאימות")
+                }
+            </script>
         </div>
     </body>
 </html>

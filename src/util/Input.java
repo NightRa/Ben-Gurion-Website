@@ -29,7 +29,7 @@ public class Input {
         String template =
             "<div class='field'>" +
                 "   <label for='" + name + "'>" + text + ":</label>" +
-                "   <input type='" + type + "' name='" + name + "' id='" + name + "' " + cssClass + valueAtt + "/>" +
+                "   <input type='" + type + "' name='" + name + "' id='" + name + "' " + cssClass + valueAtt + " onchange='validate()'/>" +
                 "</div>";
         return template;
     }

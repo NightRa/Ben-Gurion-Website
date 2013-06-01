@@ -19,8 +19,18 @@ function fail(field, msg) {
     failBlock.innerHTML += msg + "<br>"
 }
 
-function baseCheck(field, msg) {
-    return check(field, msg, checkEmpty) && check(field, msg, checkSpace)
+function validate() {
+    reset()
+    return checks() != 0 ? true : false
+}
+
+function checkEquals(field1, field2, msg) {
+    if (!equals(document.getElementById(field1).value, document.getElementById(field2).value)) {
+        fail(field2, msg)
+        return false
+    } else {
+        return true
+    }
 }
 
 function check(field, msg, func) {
@@ -39,6 +49,8 @@ function contains(s, char) {
         if (s.charAt(i) == char) return true
     }
     return false
+
+    //s.indexOf(char)>=0
 }
 
 function equals(s1, s2) {
