@@ -8,10 +8,14 @@
 <%@ page import="model.Question" %>
 <%
     User user = (User) session.getAttribute("user");
-    if (user != null) {
+    if (user == null) response.sendRedirect("/questions/welcome.jsp");
+    else {
         DB db = new RealDB();
         int qNumber = Integer.parseInt(db.select("select lastQuestion from users where id=" + user.id)[0][0]);
-        Question question = Question.getByNumber(db, qNumber);
+        int numberOfQuestions = Integer.parseInt(db.select("SELECT count(*) FROM questions")[0][0]);
+        if (qNumber > numberOfQuestions) response.sendRedirect("/questions/grade.jsp");
+        else {
+            Question question = Question.getByNumber(db, qNumber);
 %>
 <html>
     <head>
@@ -78,5 +82,7 @@
         </script>
     </body>
 </html>
-<%} else {%>
-<%}%>
+<%
+        }
+    }
+%>

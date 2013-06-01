@@ -3,8 +3,8 @@ package servlets;
 
 import db.DB;
 import db.RealDB;
-import model.Question;
 import model.User;
+import model.UserAnswer;
 import util.Validation.InputValidation;
 
 import javax.servlet.ServletException;
@@ -23,18 +23,25 @@ public class AnswerServlet extends HttpServlet {
         User user = (User) session.getAttribute("user");
         if (user != null) {
             DB db = new RealDB();
-            InputValidation valid = new InputValidation(req,db);
+            InputValidation valid = new InputValidation(req, db);
             String answerS = req.getParameter("answer");
-            if(answerS == null) valid.fail("select");
-            else{
+            if (answerS == null) {
+                valid.fail("select");
+                req.getRequestDispatcher("/questions/questions.jsp").forward(req, resp);
+            } else {
                 int questionID = Integer.parseInt(req.getParameter("questionID"));
-                Question question = new Question(db,questionID);
                 int answer = Integer.parseInt(answerS);
+                UserAnswer userAnswer = new UserAnswer(0/*Doesn't matter*/, user.id, questionID, answer);
+                userAnswer.create(db);
 
 
+                // I'm in a lack of time, and don't have the time to add a new property to user model.
+                int lastQuestion = Integer.parseInt(db.select("SELECT lastQuestion FROM users WHERE id=" + user.id)[0][0]);
+                db.update("update users set lastQuestion=" + (lastQuestion + 1) + " where id=" + user.id);
+                resp.sendRedirect("/questions/questions.jsp");
             }
         }
 
-        resp.sendRedirect("/questions/questions.jsp");
+
     }
 }
