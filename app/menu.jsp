@@ -65,12 +65,3 @@
         <%}%>
     </div>
 </div>
-<%
-    Object msg = request.getAttribute("msg");
-    if (msg != null) {
-
-%>
-<div class="msg">
-
-</div>
-<%}%>

@@ -32,9 +32,9 @@
                        המדינה וכשלושה שבועות לאחר שהאצ"ל הסכים להתפרק מנשקו ולהשתלב בצה"ל, חוץ מאשר בירושלים שבשל הגדרתה
                        כאזור בשליטת האו"ם, המשיכו כוחות אצ"ל שבה להילחם בנפרד מצה"ל.</p>
 
-                    <div class="center">
-                        <a class="btn btn-success center" href="info/preface.jsp">להמשך קריאה</a>
-                    </div>
+                    <%--<div class="center">--%>
+                    <%--<a class="btn btn-success center" href="info/preface.jsp">להמשך קריאה</a>--%>
+                    <%--</div>--%>
                 </div>
                 <div class="span6">
                     <h3>רקע</h3>
