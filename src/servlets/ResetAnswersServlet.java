@@ -16,7 +16,7 @@ public class ResetAnswersServlet extends HttpServlet {
         User user = (User) req.getSession().getAttribute("user");
         if (user != null) {
             DB db = new RealDB();
-            db.update("delete * from userAnswers where userID=" + user.id + ";");
+            db.update("delete from userAnswers where userID=" + user.id + ";");
             db.update("update users set lastQuestion=1 where id=" + user.id + ";");
         }
         resp.sendRedirect("/");
