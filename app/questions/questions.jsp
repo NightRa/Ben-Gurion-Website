@@ -13,7 +13,7 @@
         DB db = new RealDB();
         int qNumber = Integer.parseInt(db.select("select lastQuestion from users where id=" + user.id)[0][0]);
         int numberOfQuestions = Integer.parseInt(db.select("SELECT count(*) FROM questions")[0][0]);
-        if (qNumber > numberOfQuestions) response.sendRedirect("/questions/grade.jsp");
+        if (qNumber > numberOfQuestions) response.sendRedirect("/questions/grades.jsp");
         else {
             Question question = Question.getByNumber(db, qNumber);
 %>
@@ -59,7 +59,6 @@
                     </form>
                 </div>
             </div>
-
         </div>
 
         <script type="text/javascript">

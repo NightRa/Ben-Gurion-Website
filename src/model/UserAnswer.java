@@ -28,6 +28,10 @@ public class UserAnswer implements Model<UserAnswer> {
         this(db.select("select * from userAnswers where userID=" + userID + " and questionID=" + questionID + ";")[0]);
     }
 
+    public boolean isCorrect(DB db) {
+        return new Question(db, questionID).answer == answer;
+    }
+
     @Override
     public void save(DB db) {
         db.update("update userAnswers set userID=" + id + ",questionID=" + questionID + ",answer=" + answer + " where id=" + id);

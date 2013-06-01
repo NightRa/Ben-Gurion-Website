@@ -96,5 +96,13 @@
         <url-pattern>/answer</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ResetAnswers</servlet-name>
+        <servlet-class>servlets.ResetAnswersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResetAnswers</servlet-name>
+        <url-pattern>/questions/reset</url-pattern>
+    </servlet-mapping>
 
 </web-app>
