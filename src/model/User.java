@@ -25,6 +25,11 @@ public class User {
         this.isAdmin = isAdmin;
     }
 
+    // Could throw IndexOutOfBoundsException, but is accepted, as it's the fault of the caller.
+    public User(String[] params) {
+        this(Integer.parseInt(params[0]), params[1], params[2], params[3], params[4], params[5], Integer.parseInt(params[6]), params[7].equals("1"));
+    }
+
     public void save(DB db) {
         db.update("UPDATE users SET username='" + username + "',password='" + passHash + "',email='" + email + "',privateName='" + firstName + "', lastName='" + lastName + "',birthYear='" + birthYear + "',admin='" + (isAdmin ? "1" : "0") + "' WHERE id='" + id + "';");
     }
@@ -35,8 +40,8 @@ public class User {
         return login.getUser();
     }
 
-    public void delete(DB db){
-        db.update("DELETE FROM users WHERE ID="+id+"");
+    public void delete(DB db) {
+        db.update("DELETE FROM users WHERE ID=" + id + "");
     }
 
     public int getId() {

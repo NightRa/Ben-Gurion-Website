@@ -25,7 +25,7 @@
         <a href="/logout">התנתק</a>
         <a href="/user/profile.jsp">פרופיל</a>
         <%if (menuUser.isAdmin) {%>
-        <a href="/admin">לוח בקרה</a>
+        <a href="/admin/users.jsp">לוח בקרה</a>
         <%}%>
         <span>
         שלום <%=menuUser.firstName%>

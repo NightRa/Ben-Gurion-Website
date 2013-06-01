@@ -2,7 +2,8 @@ function reset() {
     var elem = document.getElementById("fields");
     var childrenO = elem.children;
     for (var i = 0; i < childrenO.length; i++) {
-        if (equals(childrenO[i].getAttribute("class"), "field")) {
+        var cssClass = childrenO[i].getAttribute("class");
+        if (cssClass != null && equals(cssClass, "field")) {
             childrenO[i].children[1].setAttribute("class", "")
         }
     }
