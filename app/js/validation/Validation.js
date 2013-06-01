@@ -3,7 +3,7 @@ function reset() {
     var childrenO = elem.children;
     for (var i = 0; i < childrenO.length; i++) {
         var cssClass = childrenO[i].getAttribute("class");
-        if (cssClass != null && equals(cssClass, "field")) {
+        if (cssClass === "field") {
             childrenO[i].children[1].setAttribute("class", "")
         }
     }
@@ -26,7 +26,7 @@ function validate() {
 }
 
 function checkEquals(field1, field2, msg) {
-    if (!equals(document.getElementById(field1).value, document.getElementById(field2).value)) {
+    if (document.getElementById(field1).value !== document.getElementById(field2).value) {
         fail(field2, msg)
         return false
     } else {
@@ -52,14 +52,6 @@ function contains(s, char) {
     return false
 
     //s.indexOf(char)>=0
-}
-
-function equals(s1, s2) {
-    if (s1.length != s2.length) return false
-    else for (var i = 0; i < s1.length; i++) {
-        if (s1.charAt(i) != s2.charAt(i)) return false
-    }
-    return true
 }
 
 function checkSpace(value) {

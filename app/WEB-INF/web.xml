@@ -69,5 +69,32 @@
         <url-pattern>/editUser</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddQuestion</servlet-name>
+        <servlet-class>servlets.AddQuestionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddQuestion</servlet-name>
+        <url-pattern>/addQuestion</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EditQuestion</servlet-name>
+        <servlet-class>servlets.EditQuestionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditQuestion</servlet-name>
+        <url-pattern>/editQuestion</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AnswerSubmission</servlet-name>
+        <servlet-class>servlets.AnswerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AnswerSubmission</servlet-name>
+        <url-pattern>/answer</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

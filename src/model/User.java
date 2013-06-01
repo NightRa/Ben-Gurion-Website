@@ -4,7 +4,7 @@ package model;
 import db.DB;
 import logic.Login;
 
-public class User {
+public class User implements Model<User> {
     public final int id;
     public final String username;
     public final String passHash;
@@ -30,9 +30,11 @@ public class User {
         this(Integer.parseInt(params[0]), params[1], params[2], params[3], params[4], params[5], Integer.parseInt(params[6]), params[7].equals("1"));
     }
 
+    @Override
     public void save(DB db) {
         db.update("UPDATE users SET username='" + username + "',password='" + passHash + "',email='" + email + "',privateName='" + firstName + "', lastName='" + lastName + "',birthYear='" + birthYear + "',admin='" + (isAdmin ? "1" : "0") + "' WHERE id='" + id + "';");
     }
+
 
     public User create(DB db) {
         db.update("INSERT INTO users (username,password,email,privateName,lastName,birthYear) VALUES ('" + username + "','" + passHash + "','" + email + "','" + firstName + "','" + lastName + "','" + birthYear + "');");
@@ -40,39 +42,8 @@ public class User {
         return login.getUser();
     }
 
+    @Override
     public void delete(DB db) {
         db.update("DELETE FROM users WHERE ID=" + id + "");
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassHash() {
-        return passHash;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public int getBirthYear() {
-        return birthYear;
-    }
-
-    public boolean isAdmin() {
-        return isAdmin;
     }
 }

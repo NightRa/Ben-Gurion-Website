@@ -21,6 +21,7 @@
         <title>לוח בקרה | שינוי פרטי משתמש</title>
         <link rel="stylesheet" href="../css/profile.css"/>
         <link rel="stylesheet" href="../css/buttons.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body dir="rtl">
         <%@include file="../menu.jsp" %>
@@ -29,7 +30,8 @@
 
             <div class="profile-menu">
                 <a class="active" href="/admin/users.jsp">עריכת משתמשים</a>
-                <a href="/user/password.jsp">שאלון</a>
+                <a href="/admin/questions.jsp">עריכת שאלות</a>
+                <a href="/admin/addQuestion.jsp">הוספת שאלה</a>
             </div>
 
             <form class="fields" id="fields" action="/editUser" method="post" onsubmit="return validate()">

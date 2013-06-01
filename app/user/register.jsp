@@ -24,12 +24,6 @@
             <h1>הרשמה</h1>
 
             <form class="fields" id="fields" action="/register" method="post" onsubmit="return validate()">
-                <%if (marked(request, "success")) {%>
-
-                <div class="status success">נתונים עודכנו בהצלחה!</div>
-
-                <%}%>
-
                 <div class="status failure" id="fail"
                      style="display: <%=marked(request,"failed")?"block":"none"%>">
                     <%=mText(request, "fail-empty", "אין להשאיר שדות ריקים")%>

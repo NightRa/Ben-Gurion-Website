@@ -24,7 +24,7 @@ public class EditUserServlet extends HttpServlet {
         HttpSession session = req.getSession();
         User adminUser = (User) session.getAttribute("user");
         int id = Integer.parseInt(req.getParameter("id"));
-        if (adminUser != null) {
+        if (adminUser != null && adminUser.isAdmin) {
             RealDB db = new RealDB();
             User user = new User(db.select("SELECT * FROM users WHERE id=" + id)[0]);
 

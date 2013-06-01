@@ -17,7 +17,9 @@ public class Login {
     }
 
     public boolean isValid() {
-        String hash = db.select("select password from users where username = '" + username + "';")[0][0];
+        String[][] users = db.select("select password from users where username = '" + username + "';");
+        if (users.length == 0) return false;
+        String hash = users[0][0];
         String newHash = CryptoUtil.md5(pass);
         return hash.equals(newHash);
     }
