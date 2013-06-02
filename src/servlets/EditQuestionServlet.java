@@ -40,7 +40,7 @@ public class EditQuestionServlet extends HttpServlet {
 
             InputValidation valid = new InputValidation(req, db);
 
-            int correctAnswer = 1; // Doesn't matter.
+            int correctAnswer = 1;// Doesn't matter!!!
             IntValidator validator = new IntValidator();
             if (!validator.isValid(correctAnswerS)) {
                 valid.fail("correctAnswer");
@@ -53,16 +53,20 @@ public class EditQuestionServlet extends HttpServlet {
 
             if (!valid.hasFailed()) {
                 Question q = new Question(db, id);
-                Question newQ = new Question(id, q.number, question, q.answer);
+                Question newQ = new Question(id, q.number, question, correctAnswer);
                 newQ.save(db);
 
-                Answer a1 = new Answer(0, 1, q.id, answer1);
+                Answer oldA1 = new Answer(db, 1, q.id);
+                Answer a1 = new Answer(oldA1.id, 1, q.id, answer1);
                 a1.save(db);
-                Answer a2 = new Answer(0, 2, q.id, answer2);
+                Answer oldA2 = new Answer(db, 2, q.id);
+                Answer a2 = new Answer(oldA2.id, 2, q.id, answer2);
                 a2.save(db);
-                Answer a3 = new Answer(0, 3, q.id, answer3);
+                Answer oldA3 = new Answer(db, 3, q.id);
+                Answer a3 = new Answer(oldA3.id, 3, q.id, answer3);
                 a3.save(db);
-                Answer a4 = new Answer(0, 4, q.id, answer4);
+                Answer oldA4 = new Answer(db, 4, q.id);
+                Answer a4 = new Answer(oldA4.id, 4, q.id, answer4);
                 a4.save(db);
                 mark(req, "edit-success");
             }
