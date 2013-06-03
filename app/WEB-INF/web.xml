@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          version="2.5">
-    <display-name>Ben Gurion</display-name>
+    <display-name>Altalena</display-name>
 
     <servlet>
         <servlet-name>Login</servlet-name>
@@ -104,5 +104,17 @@
         <servlet-name>ResetAnswers</servlet-name>
         <url-pattern>/questions/reset</url-pattern>
     </servlet-mapping>
+
+
+    <!-- Just some nice routing -->
+    <servlet>
+        <servlet-name>Admin Main Page</servlet-name>
+        <jsp-file>/admin/users.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Admin Main Page</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

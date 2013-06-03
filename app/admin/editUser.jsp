@@ -67,7 +67,7 @@
                 <input style="display: none" name="id" value="<%=user.id%>"/>
 
                 <div class="center">
-                    <button type="submit" class="btn btn-success">הרשמה</button>
+                    <button type="submit" class="btn btn-success">שמירה</button>
                 </div>
             </form>
         </div>

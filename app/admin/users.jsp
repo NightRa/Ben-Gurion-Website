@@ -13,11 +13,13 @@
         if (pageParam == null) pageNumber = 1;
         else pageNumber = Integer.parseInt(pageParam);
 
+        String sortBy = request.getParameter("sortBy");
+        String mySQLOrderBy = sortBy != null ? "ORDER BY " + sortBy : "";
 
         final int from = (pageNumber - 1) * entriesPerPage;
         RealDB db = new RealDB();
         final int totalNumUsers = Integer.parseInt(db.select("SELECT COUNT(*) FROM users")[0][0]);
-        final String[][] userParams = db.select("SELECT * FROM users LIMIT " + from + "," + entriesPerPage);
+        final String[][] userParams = db.select("SELECT * FROM users " + mySQLOrderBy + " LIMIT " + from + "," + entriesPerPage);
         // I really want to use map here. T_T
         final User[] users = new User[userParams.length];
         for (int i = 0; i < userParams.length; i++) {
