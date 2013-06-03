@@ -16,6 +16,7 @@
         String[] userParams = db.select("SELECT * FROM users WHERE id=" + userID)[0];
         User user = new User(userParams);
 %>
+<!DOCTYPE html>
 <html>
     <head>
         <title>לוח בקרה | שינוי פרטי משתמש</title>

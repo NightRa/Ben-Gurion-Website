@@ -24,6 +24,7 @@
             questions[i] = new Question(questionParams[i]);
         }
 %>
+<!DOCTYPE html>
 <html>
     <head>
         <title>לוח בקרה | עריכת שאלות</title>

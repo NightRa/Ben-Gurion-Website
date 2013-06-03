@@ -9,6 +9,7 @@
     if (user == null) response.sendRedirect("/");
     else {
 %>
+<!DOCTYPE html>
 <html>
     <head>
         <title>מחיקת משתמש</title>

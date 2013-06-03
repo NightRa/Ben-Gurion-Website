@@ -9,6 +9,7 @@
     if (user == null) response.sendRedirect("/");
     else {
 %>
+<!DOCTYPE html>
 <html>
     <head>
         <title>שינוי סיסמא | אילן גודיק</title>

@@ -17,6 +17,7 @@
         else {
             Question question = Question.getByNumber(db, qNumber);
 %>
+<!DOCTYPE html>
 <html>
     <head>
         <title>שאלון</title>

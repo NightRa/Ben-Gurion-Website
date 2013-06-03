@@ -24,6 +24,7 @@
             users[i] = new User(userParams[i]);
         }
 %>
+<!DOCTYPE html>
 <html>
     <head>
         <title>לוח בקרה | בחירת משתמש</title>

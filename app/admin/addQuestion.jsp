@@ -9,6 +9,7 @@
     if (user == null || !user.isAdmin) response.sendRedirect("/");
     else {
 %>
+<!DOCTYPE html>
 <html>
     <head>
         <title>לוח בקרה | הוספת שאלה</title>

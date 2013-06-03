@@ -22,6 +22,7 @@
         Answer a3 = new Answer(db.select("select * from answers where questionId=" + id + " and number=3")[0]);
         Answer a4 = new Answer(db.select("select * from answers where questionId=" + id + " and number=4")[0]);
 %>
+<!DOCTYPE html>
 <html>
     <head>
         <title>לוח בקרה | עריכת שאלה</title>

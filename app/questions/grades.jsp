@@ -26,6 +26,7 @@
             if (!userAnswer.isCorrect(db)) wrongAnswers[lastIndex++] = userAnswer;
         }
 %>
+<!DOCTYPE html>
 <html>
     <head>
         <title>שאלון | ציונים</title>

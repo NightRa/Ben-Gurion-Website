@@ -20,8 +20,7 @@
 
                 <p>אתר זה הוא בגדר עבודה לבגרות בנושא תכנות אינטרנט - JSP.</p>
 
-                <a href="#" class="btn btn-primary btn-large" style="margin-top: 25px;"><span
-                        class="extra">להמשך קריאה </span>אודות האתר</a>
+                <a href="questions/questions.jsp" class="btn btn-primary btn-large" style="margin-top: 25px;">לשאלון</a>
             </div>
             <div class="row-fluid">
                 <div class="span6">
@@ -32,9 +31,9 @@
                        המדינה וכשלושה שבועות לאחר שהאצ"ל הסכים להתפרק מנשקו ולהשתלב בצה"ל, חוץ מאשר בירושלים שבשל הגדרתה
                        כאזור בשליטת האו"ם, המשיכו כוחות אצ"ל שבה להילחם בנפרד מצה"ל.</p>
 
-                    <%--<div class="center">--%>
-                    <%--<a class="btn btn-success center" href="info/preface.jsp">להמשך קריאה</a>--%>
-                    <%--</div>--%>
+                    <div class="center">
+                        <a class="btn btn-success center" href="info/preface.jsp">להמשך קריאה</a>
+                    </div>
                 </div>
                 <div class="span6">
                     <h3>רקע</h3>
