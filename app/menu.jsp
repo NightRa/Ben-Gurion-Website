@@ -7,11 +7,8 @@
 <div class="menu">
     <div class="right">
         <a href="/" class="home"><img src="/img/home.png" alt="home"/></a>
-        <%--<a href="#" class="menu-expand"><img src="/img/arrow.png" alt="Expand"/></a>--%>
 
         <div class="mid-menu">
-            <%--<a href="about.jsp">אודות</a>--%>
-            <%--<a class="space"></a>--%>
             <a href="/info/preface.jsp">הקדמה</a>
             <a href="/info/background.jsp">רקע</a>
             <a href="/info/process.jsp">מהלך הפרשה</a>

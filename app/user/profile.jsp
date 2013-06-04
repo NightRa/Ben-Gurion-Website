@@ -26,7 +26,6 @@
                 <a class="active" href="/user/profile.jsp">פרטים אישיים</a>
                 <a href="/user/password.jsp">שינוי סיסמא</a>
                 <a href="/user/delete.jsp">מחיקת משתמש</a>
-                <a href="/questions/grades.jsp">ציוני שאלון</a>
             </div>
 
             <form class="fields" id="fields" method="post" action="/profile" onsubmit="return validate()">

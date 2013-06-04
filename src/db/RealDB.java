@@ -10,6 +10,7 @@ public class RealDB implements DB {
 
     public static final boolean development = true;
 
+    //Connection to Heroku's MySQL DB. Applicable when deploying on the cloud.
     public static Connection getRemoteConnection() throws URISyntaxException, SQLException {
         URI dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));
 

@@ -22,6 +22,11 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="ExportToHTMLSettings">
+    <option name="printScope" value="1" />
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\ilan3_000\Programming\Website\exportToHTML" />
+  </component>
   <component name="JavaDocConfiguration_1.0.2">
     <GENERAL>
       <MODE>UPDATE</MODE>
