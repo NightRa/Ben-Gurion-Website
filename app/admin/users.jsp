@@ -69,7 +69,7 @@
                             class="cell right"></a>
 
                     <div class="cell"><%=totalNumUsers%> משתמשים</div>
-                    <a <%=pageNumber * entriesPerPage <= totalNumUsers ?
+                    <a <%=pageNumber * entriesPerPage < totalNumUsers ?
                             ("href='/admin/users.jsp?page=" + (pageNumber + 1)) + "'" : ""%>
                             class="cell left"></a>
                 </div>
