@@ -1,18 +1,20 @@
-<%@include file="/stats/statsHeader.jsp" %>
+<%--Created by Ilan Godik--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="db.DB" %>
 <%@ page import="db.RealDB" %>
 <%@ page import="model.Answer" %>
 <%@ page import="model.Question" %>
 <%@ page import="model.UserAnswer" %>
-<%--Created by Ilan Godik--%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/stats/statsHeader.jsp" %>
 <%
     User user = (User) session.getAttribute("user");
     if (user == null) response.sendRedirect("/questions/welcome.jsp");
     else {
         DB db = new RealDB();
-        String[][] userAnswersS = db.select("select * from userAnswers where userID=" + user.id);
-        // I really want to use map... userAnswers.map(new UserAnswer(_)). Maybe Java 8 will do justice...
+        String[][] userAnswersS =
+                db.select("select * from userAnswers where userID=" + user.id);
+        // I really want to use map... userAnswers.map(new UserAnswer(_)).
+        // Maybe Java 8 will do justice...
         UserAnswer[] userAnswers = new UserAnswer[userAnswersS.length];
         int countWrong = 0;
         for (int i = 0; i < userAnswersS.length; i++) {
@@ -36,7 +38,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body dir="rtl">
-        <%@include file="../menu.jsp" %>
+        <%@include file="/menu.jsp" %>
         <div class="container">
             <h1>שאלון | ציונים</h1>
 
@@ -47,8 +49,9 @@
                                 class="total"><%=userAnswers.length%></span> שאלות
                     </p>
 
-                    <p>ולפיכך ציונך הוא: <span
-                            class="correct"><%= countCorrect * 100 / userAnswers.length %></span></p>
+                    <p>ולפיכך ציונך הוא: <span class="correct">
+                        <%= countCorrect * 100 / userAnswers.length %>
+                    </span></p>
                 </div>
                 <div class="details">
                     <div class="header">תשובות שגויות:</div>

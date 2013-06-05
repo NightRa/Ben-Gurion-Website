@@ -33,6 +33,7 @@
                 <a class="active" href="/admin/users.jsp">עריכת משתמשים</a>
                 <a href="/admin/questions.jsp">עריכת שאלות</a>
                 <a href="/admin/addQuestion.jsp">הוספת שאלה</a>
+                <a href="/admin/stats.jsp">סטטיסטיקה</a>
             </div>
 
             <form class="fields" id="fields" action="/editUser" method="post" onsubmit="return validate()">

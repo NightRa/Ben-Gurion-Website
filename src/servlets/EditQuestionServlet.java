@@ -6,8 +6,7 @@ import db.RealDB;
 import model.Answer;
 import model.Question;
 import model.User;
-import util.Validation.InputValidation;
-import util.Validation.IntValidator;
+import util.InputValidation;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -35,17 +34,12 @@ public class EditQuestionServlet extends HttpServlet {
             String answer2 = req.getParameter("answer2");
             String answer3 = req.getParameter("answer3");
             String answer4 = req.getParameter("answer4");
-            String correctAnswerS = req.getParameter("correctAnswer");
-
 
             InputValidation valid = new InputValidation(req, db);
 
-            int correctAnswer = 1;// Doesn't matter!!!
-            IntValidator validator = new IntValidator();
-            if (!validator.isValid(correctAnswerS)) {
-                valid.fail("correctAnswer");
-            } else {
-                correctAnswer = Integer.parseInt(correctAnswerS);
+            Integer correctAnswer = valid.checkNumber("correctAnswer");
+
+            if (correctAnswer != null) {
                 if (correctAnswer < 1 || correctAnswer > 4) {
                     valid.fail("correctAnswer");
                 }
@@ -53,6 +47,7 @@ public class EditQuestionServlet extends HttpServlet {
 
             if (!valid.hasFailed()) {
                 Question q = new Question(db, id);
+                //noinspection ConstantConditions
                 Question newQ = new Question(id, q.number, question, correctAnswer);
                 newQ.save(db);
 

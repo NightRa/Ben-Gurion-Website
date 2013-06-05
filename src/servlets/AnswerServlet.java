@@ -5,7 +5,7 @@ import db.DB;
 import db.RealDB;
 import model.User;
 import model.UserAnswer;
-import util.Validation.InputValidation;
+import util.InputValidation;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -41,7 +41,5 @@ public class AnswerServlet extends HttpServlet {
                 resp.sendRedirect("/questions/questions.jsp");
             }
         }
-
-
     }
 }

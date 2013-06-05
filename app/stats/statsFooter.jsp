@@ -1,9 +1,7 @@
 <%--Created by Ilan Godik--%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    // Lots of scary boxing-unboxing NPE risks
     Long startTime = (Long) request.getAttribute("startTime");
-    if (startTime != 0) {
+    if (startTime != null && startTime != 0) {
         long end = System.nanoTime();
         long time = end - startTime;
 

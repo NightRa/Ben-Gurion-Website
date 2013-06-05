@@ -3,8 +3,7 @@ package servlets;
 
 import db.RealDB;
 import model.User;
-import util.Validation.InputValidation;
-import util.Validation.IntValidator;
+import util.InputValidation;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -35,15 +34,10 @@ public class ProfileServlet extends HttpServlet {
             String firstName = valid.check("firstName");
             String lastName = valid.check("lastName");
 
-            String birthYear = req.getParameter("birthYear");
-            IntValidator validator = new IntValidator();
-            if (!validator.isValid(birthYear)) {
-                valid.fail("birthYear");
-                valid.fail("birthYear-number");
-            }
+            Integer birthYear = valid.checkNumber("birthYear");
 
             if (!valid.hasFailed()) {
-                User updated = new User(user.id, username, user.passHash, email, firstName, lastName, Integer.parseInt(birthYear), user.isAdmin);
+                User updated = new User(user.id, username, user.passHash, email, firstName, lastName, birthYear, user.isAdmin);
                 updated.save(db);
                 session.setAttribute("user", updated);
                 mark(req, "success");

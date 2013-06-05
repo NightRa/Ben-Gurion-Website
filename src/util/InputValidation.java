@@ -1,5 +1,5 @@
 //Created By Ilan Godik
-package util.Validation;
+package util;
 
 import db.DB;
 
@@ -31,7 +31,7 @@ public class InputValidation {
     }
 
     //To make sure there are no SQL injections.
-    public String spaceCheck(String field){
+    public String spaceCheck(String field) {
         String parameter = req.getParameter(field);
         if (parameter.contains(" ")) {
             fail(field);
@@ -40,7 +40,7 @@ public class InputValidation {
         return parameter;
     }
 
-    public String emptyCheck(String field){
+    public String emptyCheck(String field) {
         String parameter = req.getParameter(field);
         if (parameter.isEmpty()) {
             fail(field);
@@ -49,6 +49,16 @@ public class InputValidation {
         return parameter;
     }
 
+    public Integer checkNumber(String field) {
+        String parameter = req.getParameter(field);
+        try {
+            return Integer.parseInt(parameter);
+        } catch (Exception e) {
+            fail(field);
+            fail(field + "-number");
+            return null;
+        }
+    }
 
     public String check(String field) {
         spaceCheck(field);

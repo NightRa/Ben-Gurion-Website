@@ -39,6 +39,7 @@
                 <a href="/admin/users.jsp">עריכת משתמשים</a>
                 <a class="active" href="/admin/questions.jsp">עריכת שאלות</a>
                 <a href="/admin/addQuestion.jsp">הוספת שאלה</a>
+                <a href="/admin/stats.jsp">סטטיסטיקה</a>
             </div>
 
             <form class="fields" id="fields" action="/editQuestion" method="post" onsubmit="return validate()">

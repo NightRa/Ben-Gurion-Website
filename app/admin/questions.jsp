@@ -17,7 +17,7 @@
 
         final int from = (pageNumber - 1) * entriesPerPage;
         RealDB db = new RealDB();
-        final int totalNumUsers = Integer.parseInt(db.select("SELECT COUNT(*) FROM questions")[0][0]);
+        final int totalNumQuestions = Integer.parseInt(db.select("SELECT COUNT(*) FROM questions")[0][0]);
         final String[][] questionParams = db.select("SELECT * FROM questions LIMIT " + from + "," + entriesPerPage);
         // I really want to use map here. T_T
         final Question[] questions = new Question[questionParams.length];
@@ -42,6 +42,7 @@
                 <a href="/admin/users.jsp">עריכת משתמשים</a>
                 <a class="active" href="/admin/questions.jsp">עריכת שאלות</a>
                 <a href="/admin/addQuestion.jsp">הוספת שאלה</a>
+                <a href="/admin/stats.jsp">סטטיסטיקה</a>
             </div>
 
             <div class="fields">
@@ -67,8 +68,8 @@
                     <a <%=pageNumber != 1 ? ("href='/admin/questions.jsp?page=" + (pageNumber - 1)) + "'" : ""%>
                             class="cell right"></a>
 
-                    <div class="cell"><%=totalNumUsers%> שאלות</div>
-                    <a <%=pageNumber * entriesPerPage < totalNumUsers ?
+                    <div class="cell"><%=totalNumQuestions%> שאלות</div>
+                    <a <%=pageNumber * entriesPerPage < totalNumQuestions ?
                             ("href='/admin/questions.jsp?page=" + (pageNumber + 1)) + "'" : ""%>
                             class="cell left"></a>
                 </div>

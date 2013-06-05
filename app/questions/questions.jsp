@@ -1,4 +1,3 @@
-<%@include file="/stats/statsHeader.jsp" %>
 <%--Created by Ilan Godik--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page import="static util.Marking.*" %>
@@ -7,6 +6,7 @@
 <%@ page import="db.RealDB" %>
 <%@ page import="model.Answer" %>
 <%@ page import="model.Question" %>
+<%@include file="/stats/statsHeader.jsp" %>
 <%
     User user = (User) session.getAttribute("user");
     if (user == null) response.sendRedirect("/questions/welcome.jsp");
