@@ -1,6 +1,6 @@
-<%@include file="/stats/statsHeader.jsp" %>
 <%--Created by Ilan Godik--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/stats/statsHeader.jsp" %>
 <%@ page import="db.RealDB" %>
 <%
     request.setCharacterEncoding("UTF-8");
@@ -14,6 +14,7 @@
         if (pageParam == null) pageNumber = 1;
         else pageNumber = Integer.parseInt(pageParam);
 
+        // לא גמור
         String sortBy = request.getParameter("sortBy");
         String mySQLOrderBy = sortBy != null ? "ORDER BY " + sortBy : "";
 
