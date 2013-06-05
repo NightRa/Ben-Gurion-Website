@@ -1,20 +1,3 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : localhost
-Source Server Version : 50611
-Source Host           : localhost:3306
-Source Database       : website
-
-Target Server Type    : MYSQL
-Target Server Version : 50611
-File Encoding         : 65001
-
-Date: 2013-06-02 01:56:45
-*/
-
-SET FOREIGN_KEY_CHECKS=0;
-
 -- ----------------------------
 -- Table structure for answers
 -- ----------------------------
@@ -25,7 +8,7 @@ CREATE TABLE `answers` (
   `QuestionID` int(10) unsigned NOT NULL,
   `Text` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) AUTO_INCREMENT=93 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Table structure for questions
@@ -37,7 +20,7 @@ CREATE TABLE `questions` (
   `Text` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   `Answer` int(10) unsigned NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+)  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Table structure for useranswers
@@ -49,7 +32,7 @@ CREATE TABLE `useranswers` (
   `questionID` int(10) NOT NULL,
   `answer` int(10) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+)  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Table structure for users
@@ -68,4 +51,4 @@ CREATE TABLE `users` (
   PRIMARY KEY (`ID`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+)  DEFAULT CHARSET=utf8;
