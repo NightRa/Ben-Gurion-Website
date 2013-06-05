@@ -1,3 +1,4 @@
+<%@include file="/stats/statsHeader.jsp" %>
 <%@ page import="db.DB" %>
 <%@ page import="db.RealDB" %>
 <%@ page import="model.Answer" %>
@@ -83,3 +84,4 @@
     </body>
 </html>
 <%}%>
+<%@include file="/stats/statsFooter.jsp" %>

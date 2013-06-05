@@ -1,3 +1,4 @@
+<%@include file="/stats/statsHeader.jsp" %>
 <%--Created by Ilan Godik--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -31,3 +32,4 @@
         </div>
     </body>
 </html>
+<%@include file="/stats/statsFooter.jsp" %>

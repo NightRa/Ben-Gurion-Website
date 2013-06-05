@@ -1,3 +1,4 @@
+<%@include file="/stats/statsHeader.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -51,3 +52,4 @@
 
     </body>
 </html>
+<%@include file="/stats/statsFooter.jsp" %>

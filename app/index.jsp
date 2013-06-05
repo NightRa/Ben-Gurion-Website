@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="stats/statsHeader.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -98,3 +99,4 @@
 
     </body>
 </html>
+<%@include file="stats/statsFooter.jsp" %>

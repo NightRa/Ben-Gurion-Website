@@ -1,4 +1,5 @@
 <%--Created by Ilan Godik--%>
+<%@include file="/stats/statsHeader.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page import="static util.Marking.*" %>
 <%@page import="static util.Input.*" %>
@@ -69,3 +70,4 @@
     </body>
 </html>
 <%}%>
+<%@include file="/stats/statsFooter.jsp" %>
